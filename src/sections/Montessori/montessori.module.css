@@ -1,0 +1,382 @@
+.section {
+  background: linear-gradient(135deg, #F3E8FF 0%, #E8F8FF 100%);
+  padding: 80px 5%;
+  font-family: "Nunito", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* LEFT */
+.title {
+  font-family: "Baloo 2", cursive;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--dark);
+  margin: 0;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background: var(--lavender);
+  border-radius: 2px;
+  margin: 1rem 0;
+}
+
+.desc {
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 4px 16px rgba(45, 42, 74, 0.06);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateX(8px);
+}
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-family: "Baloo 2", cursive;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+}
+
+.cardDesc {
+  font-size: 0.82rem;
+  color: var(--mid);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* RIGHT */
+.quoteBox {
+  background: white;
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 12px 40px rgba(45, 42, 74, 0.1);
+}
+
+.quoteSymbol {
+  font-family: "Baloo 2", cursive;
+  font-size: 6rem;
+  color: var(--lavender);
+  line-height: 0.8;
+  opacity: 0.3;
+}
+
+.quoteText {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--dark);
+  line-height: 1.6;
+  font-weight: 600;
+  margin: 8px 0 0;
+}
+
+.quoteAuthor {
+  margin-top: 16px;
+  font-weight: 700;
+  color: var(--lavender);
+  font-size: 0.9rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.statCard {
+  background: var(--light);
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+}
+
+.statNum {
+  font-family: "Baloo 2", cursive;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--lavender);
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: var(--mid);
+  font-weight: 600;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .underline {
+    margin: 1rem auto;
+  }
+
+  .desc {
+    text-align: center;
+  }
+
+  .quoteBox {
+    padding: 24px;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  .section {
+    padding: 60px 5%;
+  }
+
+  .container {
+    grid-template-columns: 1fr;   /* stack layout */
+    gap: 3rem;
+  }
+
+  /* LEFT */
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .underline {
+    margin: 1rem auto;
+  }
+
+  .desc {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .pillars {
+    margin-top: 1.8rem;
+    gap: 14px;
+  }
+
+  .card {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .iconBox {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .cardTitle {
+    font-size: 0.95rem;
+  }
+
+  .cardDesc {
+    font-size: 0.8rem;
+  }
+
+  /* RIGHT */
+  .quoteBox {
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .quoteText {
+    font-size: 1.05rem;
+    text-align: center;
+  }
+
+  .quoteAuthor {
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr; /* keep 2 columns */
+    gap: 10px;
+  }
+
+  .statNum {
+    font-size: 1.6rem;
+  }
+
+  .statLabel {
+    font-size: 0.72rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .section {
+    padding: 70px 5%;
+  }
+
+  .container {
+    grid-template-columns: 1fr 1fr; /* back to 2 columns */
+    gap: 3rem;
+  }
+
+  /* LEFT */
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .desc {
+    font-size: 0.95rem;
+  }
+
+  .pillars {
+    margin-top: 1.8rem;
+    gap: 14px;
+  }
+
+  .card {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .iconBox {
+    width: 46px;
+    height: 46px;
+    font-size: 1.3rem;
+  }
+
+  .cardTitle {
+    font-size: 0.98rem;
+  }
+
+  .cardDesc {
+    font-size: 0.82rem;
+  }
+
+  /* RIGHT */
+  .quoteBox {
+    padding: 30px;
+    border-radius: 26px;
+  }
+
+  .quoteText {
+    font-size: 1.1rem;
+  }
+
+  .quoteAuthor {
+    font-size: 0.88rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .statNum {
+    font-size: 1.7rem;
+  }
+
+  .statLabel {
+    font-size: 0.74rem;
+  }
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+  .section {
+    padding: 75px 6%;
+  }
+
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+
+  /* LEFT */
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+
+  .pillars {
+    margin-top: 2rem;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .iconBox {
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDesc {
+    font-size: 0.84rem;
+  }
+
+  /* RIGHT */
+  .quoteBox {
+    padding: 32px;
+    border-radius: 28px;
+  }
+
+  .quoteText {
+    font-size: 1.15rem;
+  }
+
+  .quoteAuthor {
+    font-size: 0.9rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .statNum {
+    font-size: 1.8rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
+}

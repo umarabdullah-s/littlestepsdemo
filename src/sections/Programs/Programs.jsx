@@ -2,6 +2,7 @@
 import React from "react";
 import colors from "@/layout/utils/color";
 import SectionTag from "@/layout/WebLayout";
+import styles from "./program.module.css";
 
 const Programs = () => {
   const programs = [
@@ -50,125 +51,45 @@ const Programs = () => {
   return (
     <section
       id="programs"
+      className={styles.section}
       style={{
-        background: colors.cream,
-        padding: "80px 5%",
-        fontFamily: "'Nunito', sans-serif",
+        "--cream": colors.cream,
+        "--dark": colors.dark,
+        "--mid": colors.mid,
+        "--mint": colors.mint,
       }}
     >
       {/* HEADER */}
-      <div data-aos="fade-up" style={{ textAlign: "center" }}>
-        <SectionTag data-aos="zoom-in">Our Programs</SectionTag>
+      <div className={styles.header}>
+        <SectionTag>Our Programs</SectionTag>
 
-        <h2
-          data-aos="fade-up"
-          data-aos-delay="100"
-          style={{
-            fontFamily: "'Baloo 2', cursive",
-            fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-            fontWeight: 800,
-            color: colors.dark,
-            margin: 0,
-          }}
-        >
-          Tailored for Every Age Group
-        </h2>
+        <h2 className={styles.title}>Tailored for Every Age Group</h2>
 
-        <div
-          data-aos="fade-up"
-          data-aos-delay="200"
-          style={{
-            width: 60,
-            height: 4,
-            background: colors.mint,
-            borderRadius: 2,
-            margin: "1rem auto",
-          }}
-        />
+        <div className={styles.underline}></div>
 
-        <p
-          data-aos="fade-up"
-          data-aos-delay="300"
-          style={{ color: colors.mid, maxWidth: 520, margin: "0 auto" }}
-        >
+        <p className={styles.desc}>
           From toddlers to kindergarteners, we have the perfect program for
           every stage.
         </p>
       </div>
 
       {/* CARDS */}
-      <div
-        data-aos="fade-up"
-        data-aos-delay="400"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "1.5rem",
-          marginTop: "3rem",
-        }}
-      >
-        {programs.map((p, i) => (
+      <div className={styles.grid}>
+        {programs.map((p) => (
           <div
             key={p.title}
-            data-aos="zoom-in"
-            data-aos-delay={500 + i * 150} // stagger effect
-            style={{
-              background: p.bg,
-              borderRadius: 24,
-              padding: "28px 20px",
-              textAlign: "center",
-              cursor: "pointer",
-              transition: "transform 0.3s, box-shadow 0.3s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.boxShadow =
-                "0 20px 40px rgba(45,42,74,0.12)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
+            className={styles.card}
+            style={{ background: p.bg }}
           >
-            <div style={{ fontSize: "2.8rem", marginBottom: 12 }}>
-              {p.emoji}
-            </div>
+            <div className={styles.emoji}>{p.emoji}</div>
 
-            <h3
-              style={{
-                fontFamily: "'Baloo 2', cursive",
-                fontSize: "1.1rem",
-                fontWeight: 700,
-                color: p.accent,
-                marginBottom: 6,
-              }}
-            >
+            <h3 className={styles.cardTitle} style={{ color: p.accent }}>
               {p.title}
             </h3>
 
-            <p
-              style={{
-                fontSize: "0.82rem",
-                color: colors.mid,
-                lineHeight: 1.5,
-                margin: 0,
-              }}
-            >
-              {p.desc}
-            </p>
+            <p className={styles.cardDesc}>{p.desc}</p>
 
-            <div
-              style={{
-                display: "inline-block",
-                marginTop: 12,
-                padding: "4px 12px",
-                borderRadius: 50,
-                background: p.accent,
-                color: "white",
-                fontSize: "0.75rem",
-                fontWeight: 700,
-              }}
-            >
+            <div className={styles.badge} style={{ background: p.accent }}>
               {p.age}
             </div>
           </div>
