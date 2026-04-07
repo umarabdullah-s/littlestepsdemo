@@ -58,9 +58,12 @@ const Navbar = () => {
           </button>
 
           {/* HAMBURGER */}
-          <div className={styles.hamburger} onClick={() => setOpen(true)}>
-            ☰
-          </div>
+        <div
+  className={styles.hamburger}
+  onClick={() => setOpen(!open)}   
+>
+  {open ? "✖" : "☰"}   
+</div>
         </div>
       </nav>
 
@@ -68,25 +71,34 @@ const Navbar = () => {
      {open && (
   <div className={styles.drawerOverlay} onClick={() => setOpen(false)}>
     <div
-      className={`${styles.drawer} ${open ? styles.openDrawer : ""}`}
-      onClick={(e) => e.stopPropagation()}
-    >
-            <ul>
-              {menuItems.map((id) => (
-                <li key={id}>
-                  <button onClick={() => scrollTo(id)}>{id}</button>
-                </li>
-              ))}
-            </ul>
+  className={`${styles.drawer} ${open ? styles.openDrawer : ""}`}
+  onClick={(e) => e.stopPropagation()}
+>
+  {/* 🔥 CLOSE BUTTON */}
+ 
 
-            <button
-              className={styles.enrollBtn}
-              style={{ background: colors.coral, color: "white" }}
-              onClick={() => scrollTo("admission")}
-            >
-              Enroll Now
-            </button>
-          </div>
+  <ul>
+    {menuItems.map((id) => (
+      <li key={id}>
+        <button onClick={() => scrollTo(id)}>{id}</button>
+      </li>
+    ))}
+  </ul>
+
+  <button
+  className={styles.enrollBtn}
+  style={{
+    background: colors.coral,
+    color: "white",
+    width: "80%",          // optional
+    margin: "20px auto",   // 🔥 center
+    display: "block"
+  }}
+  onClick={() => scrollTo("admission")}
+>
+  Enroll Now
+</button>
+</div>
         </div>
       )}
     </>

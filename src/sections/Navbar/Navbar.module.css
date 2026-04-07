@@ -75,28 +75,33 @@
 /* DRAWER */
 .drawerOverlay {
   position: fixed;
-  top: 0;
+  top: 80px;   /* 🔥 same as drawer */
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.3);
-  z-index: 9999;
+  height: calc(100% - 80px); /* remaining space */
+  background: rgba(0,0,0,0.2);
+  z-index: 998;
 }
 
 /* RIGHT SIDE DRAWER */
 .drawer {
   position: fixed;
-  top: 0;
-  right: 0; /* 👉 change to left:0 if you want left drawer */
-  height: 100%;
-  width: 260px;
+  top: 80px;   /* 🔥 push below navbar */
+  right: 0;
+  width: 100%;
+  height: auto;
   background: white;
-  padding: 30px 20px;
-  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-  transform: translateX(100%); /* hidden */
-  transition: transform 0.3s ease;
-}
+  padding: 25px 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  z-index: 999; /* lower than navbar */
+}
 /* OPEN STATE */
 .openDrawer {
   transform: translateX(0);
@@ -105,23 +110,27 @@
 .drawer ul {
   list-style: none;
   padding: 0;
-  margin-top: 40px;
-}
+  margin-top: 20px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 🔥 CENTER horizontally */
+}
 .drawer li {
-  margin: 20px 0;
+  margin: 15px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* 🔥 CENTER button */
 }
 
 .drawer button {
   background: none;
   border: none;
-  font-size: 1rem;
-  width: 100%;
-  text-align: left;
+  font-size: 1.1rem;
+  text-align: center;   /* 🔥 CENTER text */
   padding: 10px 0;
   cursor: pointer;
-  color: #333333;
-  transition: all 0.2s ease;
+  color: #333;
 }
 /* ANIMATION */
 @keyframes scaleIn {
@@ -136,7 +145,7 @@
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .menu {
     display: none;
   }
@@ -147,5 +156,66 @@
 
   .hamburger {
     display: block;
+  }
+} */
+ @media (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+
+  .menu {
+    gap: 1.5rem;
+  }
+
+  .menu button {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 1024px) {
+  .menu {
+    display: none;
+  }
+
+  .enrollBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 14px 0;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .hamburger {
+    font-size: 1.6rem;
+  }
+
+  .drawer {
+    padding: 20px 15px;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .hamburger {
+    font-size: 1.4rem;
+  }
+
+  .drawer button {
+    font-size: 1rem;
+  }
+
+  .enrollBtn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
 }
