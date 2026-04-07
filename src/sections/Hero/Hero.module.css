@@ -186,126 +186,308 @@
   font-family: 'Nunito', sans-serif;
   animation: float 5s ease-in-out infinite;
 }
-/* ================= LARGE SCREEN (≥1200px) ================= */
-@media (min-width: 1200px) {
-  .hero {
-    padding: 120px 8%;
-  }
+/* ================= MOBILE (≤576px) ================= */
+@media (max-width: 576px) {
 
-  .heading {
-    font-size: 3.8rem;
-  }
-}
-
-/* ================= LAPTOP (≤1200px) ================= */
-@media (max-width: 1200px) {
-  .hero {
-    padding: 100px 4%;
-  }
-
-  .cardWrapper {
-    width: min(360px, 45%);
-  }
-}
-
-/* ================= TABLET (≤992px) ================= */
-@media (max-width: 992px) {
   .hero {
     flex-direction: column;
-    text-align: center;
-   padding: 90px 20px 50px;
+    align-items: flex-start;
+    padding: 80px 20px 40px;
   }
 
+  /* LEFT CONTENT */
   .content {
     max-width: 100%;
-      margin-bottom: 30px;
-  }
-
-  .buttonGroup {
-    justify-content: center;
-  }
-
-  .stats {
-    justify-content: center;
-  }
-
-  .cardWrapper {
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-    width: 100%;
-    margin-top: 40px;
-  }
-}
-
-/* ================= MOBILE (≤768px) ================= */
-@media (max-width: 768px) {
-  .hero {
-    padding: 80px 16px 40px;
   }
 
   .heading {
-    font-size: 1.9rem;
-    line-height: 1.3;
+    font-size: 2rem;
+    line-height: 1.2;
   }
 
   .description {
     font-size: 0.95rem;
-    margin: 1rem 0 1.5rem;
   }
 
+  /* BUTTONS */
   .buttonGroup {
     flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    width: 100%;
   }
 
   .primaryBtn,
   .secondaryBtn {
     width: 100%;
-    max-width: 260px;
+    text-align: center;
   }
 
+  /* STATS */
   .stats {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.2rem;
-  }
-
-  .cardWrapper {
-    margin-top: 30px;
-  }
-}
-
-/* ================= SMALL MOBILE (≤480px) ================= */
-@media (max-width: 480px) {
-  .hero {
-    padding: 60px 12px;
-  }
-
-  .heading {
-    font-size: 1.6rem;
-  }
-
-  .badge {
-    font-size: 0.7rem;
-    padding: 5px 12px;
-  }
-
-  .description {
-    font-size: 0.9rem;
-  }
-
-  .stats {
+    flex-direction: row;
+    justify-content: space-between;
     gap: 1rem;
+    width: 100%;
+  }
+
+  .statNumber {
+    font-size: 1.4rem;
   }
 
   .statLabel {
     font-size: 0.7rem;
   }
 
+  /* RIGHT CARD */
+  .cardWrapper {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
   .gridItem {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  /* FLOATING BADGES */
+  .floatingBadge {
+    display: none; /* hide for small screens */
+  }
+
+  /* BG SHAPES */
+  .shape {
+    opacity: 0.3; /* reduce distraction */
+  }
+}
+/* ================= TABLET (577px – 768px) ================= */
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 90px 30px 50px;
+  }
+
+  /* LEFT CONTENT */
+  .content {
+    max-width: 90%;
+  }
+
+  .heading {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  /* BUTTONS */
+  .buttonGroup {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  /* STATS */
+  .stats {
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .statNumber {
+    font-size: 1.6rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
+
+  /* RIGHT CARD */
+  .cardWrapper {
+    position: static;
+    transform: none;
+    width: 80%;
+    margin-top: 50px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .grid {
+    gap: 10px;
+  }
+
+  .gridItem {
+    font-size: 1.5rem;
+  }
+
+  /* FLOATING BADGES */
+  .floatingBadge {
+    display: none;
+  }
+
+  /* BG SHAPES */
+  .shape {
+    opacity: 0.4;
+  }
+}
+/* ================= SMALL LAPTOP (769px – 992px) ================= */
+@media (min-width: 769px) and (max-width: 992px) {
+
+  .hero {
+    flex-direction: column; /* 🔥 key change */
+    align-items: center;
+    text-align: center;
+    padding: 100px 40px 60px;
+  }
+
+  /* LEFT CONTENT */
+  .content {
+    max-width: 80%;
+  }
+
+  .heading {
+    font-size: 2.6rem;
+    line-height: 1.2;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  /* BUTTONS */
+  .buttonGroup {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* STATS */
+  .stats {
+    justify-content: center;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+  }
+
+  .statNumber {
+    font-size: 1.7rem;
+  }
+
+  /* RIGHT CARD (👇 move below) */
+  .cardWrapper {
+    position: static;   /* 🔥 important */
+    transform: none;
+    width: 70%;
+    margin-top: 50px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .grid {
+    gap: 10px;
+  }
+
+  .gridItem {
+    font-size: 1.5rem;
+  }
+
+  /* FLOATING BADGES */
+  .floatingBadge {
+    display: none; /* cleaner look */
+  }
+
+  /* BG SHAPES */
+  .shape {
+    opacity: 0.4;
+  }
+}
+/* ================= LARGE LAPTOP (992px – 1200px) ================= */
+@media (min-width: 992px) and (max-width: 1200px) {
+
+  .hero {
+    flex-direction: row; /* back to desktop layout */
+    align-items: center;
+    padding: 100px 4% 60px;
+  }
+
+  /* LEFT CONTENT */
+  .content {
+    max-width: 50%;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.02rem;
+  }
+
+  /* BUTTONS */
+  .buttonGroup {
+    gap: 0.9rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 13px 26px;
+    font-size: 0.95rem;
+  }
+
+  /* STATS */
+  .stats {
+    gap: 1.8rem;
+  }
+
+  .statNumber {
+    font-size: 1.7rem;
+  }
+
+  /* RIGHT CARD */
+  .cardWrapper {
+    position: absolute; /* 🔥 same as desktop */
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(380px, 42%);
+  }
+
+  .card {
+    padding: 26px;
+  }
+
+  .gridItem {
+    font-size: 1.6rem;
+  }
+
+  /* FLOATING BADGES (🔥 SAME AS DESKTOP) */
+  .floatingBadge {
+    display: flex;
+    position: absolute;
+    transform: scale(0.95);
+  }
+
+  /* BG SHAPES */
+  .shape {
+    opacity: 0.6;
   }
 }
