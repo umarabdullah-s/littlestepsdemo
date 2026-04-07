@@ -102,13 +102,14 @@
 }
 
 .grid2 {
+  margin-top: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
 .inputGroup {
-  margin-top: 12px;
+  margin-top: 30px;
 }
 
 .label {
@@ -147,7 +148,7 @@
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
   transition: transform 0.2s;
 }
@@ -221,7 +222,8 @@
   }
 
   .grid2 {
-    grid-template-columns: 1fr;   /* stack inputs */
+    grid-template-columns: 1fr;
+    gap: 30px;   /* stack inputs */
   }
 
   .label {
@@ -305,7 +307,7 @@
 
   .grid2 {
     grid-template-columns: 1fr; /* keep 2 columns (tablet looks good) */
-    gap: 10px;
+    gap: 30px;
   }
 
   .label {
@@ -382,7 +384,7 @@
 
   .grid2 {
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 20px;
   }
 
   .label {
