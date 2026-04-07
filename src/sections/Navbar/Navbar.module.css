@@ -1,0 +1,151 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
+  font-family: "Nunito", sans-serif;
+}
+
+.scrolled {
+  background: rgba(255, 249, 240, 0.96);
+  box-shadow: 0 2px 20px rgba(45, 42, 74, 0.1);
+}
+
+.notScrolled {
+  background: rgba(255, 249, 240, 0.85);
+}
+
+.container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+/* LOGO */
+.logo {
+  font-family: "Baloo 2", cursive;
+  font-size: 1.6rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  transition: color 0.2s;
+}
+
+/* BUTTON */
+.enrollBtn {
+  border: none;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* DRAWER */
+.drawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+
+/* RIGHT SIDE DRAWER */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0; /* 👉 change to left:0 if you want left drawer */
+  height: 100%;
+  width: 260px;
+  background: white;
+  padding: 30px 20px;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+  transform: translateX(100%); /* hidden */
+  transition: transform 0.3s ease;
+}
+
+/* OPEN STATE */
+.openDrawer {
+  transform: translateX(0);
+}
+
+.drawer ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.drawer li {
+  margin: 20px 0;
+}
+
+.drawer button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #333333;
+  transition: all 0.2s ease;
+}
+/* ANIMATION */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .enrollBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
