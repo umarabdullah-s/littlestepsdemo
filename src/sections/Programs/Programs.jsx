@@ -61,25 +61,39 @@ const Programs = () => {
     >
       {/* HEADER */}
       <div className={styles.header}>
-        <SectionTag>Our Programs</SectionTag>
+        {/* TAG */}
+        <div data-aos="fade-down" data-aos-delay="100">
+          <SectionTag>Our Programs</SectionTag>
+        </div>
 
-        <h2 className={styles.title}>Tailored for Every Age Group</h2>
+        {/* TITLE */}
+        <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
+          Tailored for Every Age Group
+        </h2>
 
-        <div className={styles.underline}></div>
+        {/* UNDERLINE */}
+        <div
+          className={styles.underline}
+          data-aos="fade-down"
+          data-aos-delay="300"
+        ></div>
 
-        <p className={styles.desc}>
+        {/* DESCRIPTION */}
+        <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
           From toddlers to kindergarteners, we have the perfect program for
           every stage.
         </p>
       </div>
 
       {/* CARDS */}
-      <div className={styles.grid}>
-        {programs.map((p) => (
+      <div className={styles.grid} data-aos="fade-up" data-aos-delay="500">
+        {programs.map((p, i) => (
           <div
             key={p.title}
             className={styles.card}
             style={{ background: p.bg }}
+            data-aos="fade-up"
+            data-aos-delay={600 + i * 150}
           >
             <div className={styles.emoji}>{p.emoji}</div>
 

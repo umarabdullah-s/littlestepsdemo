@@ -49,21 +49,25 @@ const Admission = () => {
     >
       <div className={styles.container}>
         {/* LEFT SIDE */}
-        <div data-aos="fade-right" data-aos-duration="1000">
-          <SectionTag data-aos="zoom-in" data-aos-delay="100">
-            Admissions
-          </SectionTag>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          {/* TAG */}
+          <div data-aos="fade-down" data-aos-delay="100">
+            <SectionTag>Admissions</SectionTag>
+          </div>
 
+          {/* TITLE */}
           <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
             Enroll Your Child Today
           </h2>
 
+          {/* UNDERLINE */}
           <div
             className={styles.underline}
-            data-aos="fade-up"
+            data-aos="fade-down"
             data-aos-delay="300"
           ></div>
 
+          {/* DESCRIPTION */}
           <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
             Join the Blossom family! Our simple 4-step process makes enrollment
             easy and stress-free.
@@ -94,15 +98,12 @@ const Admission = () => {
         </div>
 
         {/* RIGHT SIDE FORM */}
-        <div
-          className={styles.formBox}
-          data-aos="fade-left"
-          data-aos-duration="1000"
-        >
+        <div className={styles.formBox} data-aos="fade-up" data-aos-delay="500">
+          {/* FORM TITLE */}
           <h3
             className={styles.formTitle}
-            data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos="fade-down"
+            data-aos-delay="600"
           >
             📋 Enquiry Form
           </h3>
@@ -112,8 +113,8 @@ const Admission = () => {
             {[
               ["Parent's Name", "text", "Full name", "parent"],
               ["Child's Name", "text", "Child's name", "child"],
-            ].map(([label, type, ph, key]) => (
-              <div key={key}>
+            ].map(([label, type, ph, key], i) => (
+              <div key={key} data-aos="fade-up" data-aos-delay={700 + i * 100}>
                 <label className={styles.label}>{label}</label>
                 <input
                   type={type}
@@ -131,8 +132,8 @@ const Admission = () => {
             {[
               ["Phone Number", "tel", "+91 XXXXX XXXXX", "phone"],
               ["Child's Age", "text", "e.g. 3 years", "age"],
-            ].map(([label, type, ph, key]) => (
-              <div key={key}>
+            ].map(([label, type, ph, key], i) => (
+              <div key={key} data-aos="fade-up" data-aos-delay={800 + i * 100}>
                 <label className={styles.label}>{label}</label>
                 <input
                   type={type}
@@ -146,7 +147,11 @@ const Admission = () => {
           </div>
 
           {/* EMAIL */}
-          <div className={styles.inputGroup}>
+          <div
+            className={styles.inputGroup}
+            data-aos="fade-up"
+            data-aos-delay="900"
+          >
             <label className={styles.label}>Email Address</label>
             <input
               type="email"
@@ -158,7 +163,11 @@ const Admission = () => {
           </div>
 
           {/* SELECT */}
-          <div className={styles.inputGroup}>
+          <div
+            className={styles.inputGroup}
+            data-aos="fade-up"
+            data-aos-delay="1000"
+          >
             <label className={styles.label}>Program of Interest</label>
             <select
               value={form.program}
@@ -181,6 +190,8 @@ const Admission = () => {
           {/* BUTTON */}
           <button
             className={styles.button}
+            data-aos="fade-up"
+            data-aos-delay="1100"
             onClick={() => alert("Thank you! We will contact you shortly 🌸")}
           >
             Submit Enquiry →

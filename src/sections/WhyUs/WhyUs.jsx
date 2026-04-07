@@ -54,19 +54,31 @@ const WhyUs = () => {
     >
       {/* HEADER */}
       <div className={styles.header}>
-        <div className={styles.tag}>Why Choose Us</div>
+        {/* TAG */}
+        <div className={styles.tag} data-aos="fade-down" data-aos-delay="100">
+          Why Choose Us
+        </div>
 
-        <h2 className={styles.title}>What Makes Blossom Special</h2>
+        {/* TITLE */}
+        <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
+          What Makes Blossom Special
+        </h2>
 
-        <p className={styles.subtitle}>
+        {/* SUBTITLE */}
+        <p className={styles.subtitle} data-aos="fade-up" data-aos-delay="300">
           Every choice we make is guided by what's best for your child.
         </p>
       </div>
 
       {/* CARDS */}
-      <div className={styles.grid}>
-        {cards.map((c) => (
-          <div key={c.title} className={styles.card}>
+      <div className={styles.grid} data-aos="fade-up" data-aos-delay="400">
+        {cards.map((c, i) => (
+          <div
+            key={c.title}
+            className={styles.card}
+            data-aos="fade-up"
+            data-aos-delay={500 + i * 150}
+          >
             <div className={styles.iconBox} style={{ background: c.bg }}>
               {c.icon}
             </div>

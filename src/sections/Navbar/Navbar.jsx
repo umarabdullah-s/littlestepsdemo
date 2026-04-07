@@ -23,19 +23,27 @@ const Navbar = () => {
 
   return (
     <>
+      {/* NAVBAR */}
       <nav
+        data-aos="fade-down"
+        data-aos-duration="800"
         className={`${styles.navbar} ${
           scrolled ? styles.scrolled : styles.notScrolled
         }`}
       >
         <div className={styles.container}>
           {/* LOGO */}
-          <div className={styles.logo} style={{ color: colors.coral }}>
+          <div
+            className={styles.logo}
+            style={{ color: colors.coral }}
+            data-aos="fade-down"
+            data-aos-delay="100"
+          >
             🌸 Blossom <span style={{ color: colors.mint }}>Play School</span>
           </div>
 
           {/* MENU */}
-          <ul className={styles.menu}>
+          <ul className={styles.menu} data-aos="fade-up" data-aos-delay="200">
             {menuItems.map((id) => (
               <li key={id}>
                 <button
@@ -52,25 +60,34 @@ const Navbar = () => {
           <button
             className={styles.enrollBtn}
             style={{ background: colors.coral, color: "white" }}
+            data-aos="fade-up"
+            data-aos-delay="300"
             onClick={() => scrollTo("admission")}
           >
             Enroll Now
           </button>
 
           {/* HAMBURGER */}
-          <div className={styles.hamburger} onClick={() => setOpen(true)}>
+          <div
+            className={styles.hamburger}
+            onClick={() => setOpen(true)}
+            data-aos="fade-down"
+            data-aos-delay="200"
+          >
             ☰
           </div>
         </div>
       </nav>
 
       {/* DRAWER */}
-     {open && (
-  <div className={styles.drawerOverlay} onClick={() => setOpen(false)}>
-    <div
-      className={`${styles.drawer} ${open ? styles.openDrawer : ""}`}
-      onClick={(e) => e.stopPropagation()}
-    >
+      {open && (
+        <div className={styles.drawerOverlay} onClick={() => setOpen(false)}>
+          <div
+            className={`${styles.drawer} ${open ? styles.openDrawer : ""}`}
+            data-aos="fade-down"
+            data-aos-duration="500"
+            onClick={(e) => e.stopPropagation()}
+          >
             <ul>
               {menuItems.map((id) => (
                 <li key={id}>
@@ -82,6 +99,8 @@ const Navbar = () => {
             <button
               className={styles.enrollBtn}
               style={{ background: colors.coral, color: "white" }}
+              data-aos="fade-up"
+              data-aos-delay="200"
               onClick={() => scrollTo("admission")}
             >
               Enroll Now

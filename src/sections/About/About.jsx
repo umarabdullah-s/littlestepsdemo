@@ -23,8 +23,12 @@ const About = () => {
         "--coral": colors.coral,
       }}
     >
-      {/* LEFT */}
-      <div className={styles.cardGrid}>
+      {/* LEFT CARDS */}
+      <div
+        className={styles.cardGrid}
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         {cards.map((c, i) => (
           <div
             key={i}
@@ -33,6 +37,8 @@ const About = () => {
               background: c.bg,
               marginTop: c.mt,
             }}
+            data-aos="fade-up"
+            data-aos-delay={i * 150}
           >
             <span className={styles.icon}>{c.icon}</span>
             {c.label}
@@ -40,28 +46,46 @@ const About = () => {
         ))}
       </div>
 
-      {/* RIGHT */}
-      <div>
-        <SectionTag>About Us</SectionTag>
+      {/* RIGHT CONTENT */}
+      <div data-aos="fade-up" data-aos-delay="200">
+        {/* TAG */}
+        <div data-aos="fade-down" data-aos-delay="100">
+          <SectionTag>About Us</SectionTag>
+        </div>
 
-        <h2 className={styles.title}>A Home Away From Home for Your Child</h2>
+        {/* TITLE */}
+        <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
+          A Home Away From Home for Your Child
+        </h2>
 
-        <div className={styles.underline}></div>
+        {/* UNDERLINE */}
+        <div
+          className={styles.underline}
+          data-aos="fade-down"
+          data-aos-delay="300"
+        ></div>
 
-        <p className={styles.desc}>
+        {/* DESCRIPTION */}
+        <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
           Founded in 2009, Blossom Play School has been a beacon of early
           childhood education. We believe every child is unique and deserves a
           space where their curiosity is celebrated.
         </p>
 
+        {/* LIST */}
         <ul className={styles.list}>
           {[
             ["💛", "Child-centered learning philosophy"],
             ["🛡️", "Safe, secure, and hygienic campus"],
             ["🤝", "Strong parent-teacher partnership"],
             ["🌱", "Holistic development — mind, body & spirit"],
-          ].map(([icon, text]) => (
-            <li key={text} className={styles.listItem}>
+          ].map(([icon, text], i) => (
+            <li
+              key={text}
+              className={styles.listItem}
+              data-aos="fade-up"
+              data-aos-delay={500 + i * 150}
+            >
               <span>{icon}</span>
               <span>{text}</span>
             </li>
