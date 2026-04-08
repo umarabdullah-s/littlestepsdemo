@@ -56,16 +56,26 @@ const Campus = () => {
     >
       <div className={styles.container}>
         {/* LEFT */}
-        <div data-aos="fade-right">
-          <SectionTag data-aos="zoom-in">Our Campus</SectionTag>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          {/* TAG */}
+          <div data-aos="fade-down" data-aos-delay="100">
+            <SectionTag>Our Campus</SectionTag>
+          </div>
 
-          <h2 className={styles.title} data-aos="fade-up">
+          {/* TITLE */}
+          <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
             Spaces Designed for Little Explorers
           </h2>
 
-          <div className={styles.underline}></div>
+          {/* UNDERLINE */}
+          <div
+            className={styles.underline}
+            data-aos="fade-down"
+            data-aos-delay="300"
+          ></div>
 
-          <p className={styles.desc}>
+          {/* DESCRIPTION */}
+          <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
             Our sprawling campus is built with children in mind — bright, safe,
             and brimming with opportunities for discovery.
           </p>
@@ -73,7 +83,12 @@ const Campus = () => {
           {/* FEATURES */}
           <div className={styles.features}>
             {features.map(([icon, label], i) => (
-              <div key={label} className={styles.featureItem}>
+              <div
+                key={label}
+                className={styles.featureItem}
+                data-aos="fade-up"
+                data-aos-delay={500 + i * 120}
+              >
                 <span className={styles.featureIcon}>{icon}</span>
                 <span>{label}</span>
               </div>
@@ -82,7 +97,7 @@ const Campus = () => {
         </div>
 
         {/* RIGHT */}
-        <div className={styles.tiles}>
+        <div className={styles.tiles} data-aos="fade-up" data-aos-delay="500">
           {tiles.map((t, i) => (
             <div
               key={i}
@@ -91,6 +106,8 @@ const Campus = () => {
                 background: t.bg,
                 gridRow: t.gridRow,
               }}
+              data-aos="fade-up"
+              data-aos-delay={600 + i * 150}
             >
               {t.emoji}
 

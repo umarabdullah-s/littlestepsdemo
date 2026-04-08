@@ -46,20 +46,26 @@ const Montessori = () => {
     >
       <div className={styles.container}>
         {/* LEFT */}
-        <div data-aos="fade-right">
-          <SectionTag data-aos="zoom-in">Montessori Method</SectionTag>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          {/* TAG */}
+          <div data-aos="fade-down" data-aos-delay="100">
+            <SectionTag>Montessori Method</SectionTag>
+          </div>
 
-          <h2 data-aos="fade-up" data-aos-delay="100" className={styles.title}>
+          {/* TITLE */}
+          <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
             Education That Follows the Child
           </h2>
 
+          {/* UNDERLINE */}
           <div
-            data-aos="fade-up"
-            data-aos-delay="200"
             className={styles.underline}
+            data-aos="fade-down"
+            data-aos-delay="300"
           ></div>
 
-          <p data-aos="fade-up" data-aos-delay="300" className={styles.desc}>
+          {/* DESCRIPTION */}
+          <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
             The Montessori philosophy guides everything we do — giving children
             the freedom to explore and the time to grow at their own pace.
           </p>
@@ -71,7 +77,7 @@ const Montessori = () => {
                 key={p.title}
                 className={styles.card}
                 data-aos="fade-up"
-                data-aos-delay={400 + i * 150}
+                data-aos-delay={500 + i * 150}
               >
                 <div className={styles.iconBox} style={{ background: p.bg }}>
                   {p.icon}
@@ -87,9 +93,13 @@ const Montessori = () => {
         </div>
 
         {/* RIGHT */}
-        <div data-aos="fade-left" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="500">
           {/* QUOTE */}
-          <div data-aos="zoom-in" className={styles.quoteBox}>
+          <div
+            className={styles.quoteBox}
+            data-aos="fade-down"
+            data-aos-delay="600"
+          >
             <div className={styles.quoteSymbol}>"</div>
 
             <p className={styles.quoteText}>
@@ -106,8 +116,8 @@ const Montessori = () => {
               <div
                 key={label}
                 className={styles.statCard}
-                data-aos="zoom-in"
-                data-aos-delay={300 + i * 150}
+                data-aos="fade-up"
+                data-aos-delay={700 + i * 150}
               >
                 <div className={styles.statNum}>{num}</div>
                 <div className={styles.statLabel}>{label}</div>

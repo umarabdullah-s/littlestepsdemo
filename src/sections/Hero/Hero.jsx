@@ -5,13 +5,40 @@ import styles from "./Hero.module.css";
 const Hero = () => {
   return (
     <section id="hero" className={styles.hero}>
-      
       {/* BG Shapes */}
       {[
-        { w: 300, h: 300, bg: "rgba(255,107,107,0.1)", top: -80, right: -60, delay: 0 },
-        { w: 200, h: 200, bg: "rgba(107,203,119,0.12)", bottom: 60, left: -40, delay: 2 },
-        { w: 150, h: 150, bg: "rgba(255,217,61,0.15)", top: "40%", right: "20%", delay: 4 },
-        { w: 100, h: 100, bg: "rgba(78,205,196,0.15)", top: "20%", left: "30%", delay: 1 },
+        {
+          w: 300,
+          h: 300,
+          bg: "rgba(255,107,107,0.1)",
+          top: -80,
+          right: -60,
+          delay: 0,
+        },
+        {
+          w: 200,
+          h: 200,
+          bg: "rgba(107,203,119,0.12)",
+          bottom: 60,
+          left: -40,
+          delay: 2,
+        },
+        {
+          w: 150,
+          h: 150,
+          bg: "rgba(255,217,61,0.15)",
+          top: "40%",
+          right: "20%",
+          delay: 4,
+        },
+        {
+          w: 100,
+          h: 100,
+          bg: "rgba(78,205,196,0.15)",
+          top: "20%",
+          left: "30%",
+          delay: 1,
+        },
       ].map((s, i) => (
         <div
           key={i}
@@ -34,7 +61,6 @@ const Hero = () => {
         className={styles.content}
         data-aos="fade-up"
         data-aos-duration="1000"
-        data-aos-delay="200"
       >
         {/* Badge */}
         <div
@@ -43,7 +69,7 @@ const Hero = () => {
             border: `2px solid ${colors.sun}`,
             color: colors.peach,
           }}
-          data-aos="zoom-in"
+          data-aos="fade-down"
           data-aos-delay="100"
         >
           ⭐ Admissions Open 2025–26
@@ -56,9 +82,8 @@ const Hero = () => {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Where Little Minds{" "}
-          <span style={{ color: colors.coral }}>Bloom</span> &{" "}
-          <span style={{ color: colors.mint }}>Grow</span>
+          Where Little Minds <span style={{ color: colors.coral }}>Bloom</span>{" "}
+          & <span style={{ color: colors.mint }}>Grow</span>
         </h1>
 
         {/* Description */}
@@ -76,7 +101,7 @@ const Hero = () => {
         {/* Buttons */}
         <div
           className={styles.buttonGroup}
-          data-aos="zoom-in"
+          data-aos="fade-up"
           data-aos-delay="400"
         >
           <button
@@ -120,16 +145,10 @@ const Hero = () => {
               data-aos="fade-up"
               data-aos-delay={600 + i * 150}
             >
-              <div
-                className={styles.statNumber}
-                style={{ color: colors.dark }}
-              >
+              <div className={styles.statNumber} style={{ color: colors.dark }}>
                 {num}
               </div>
-              <div
-                className={styles.statLabel}
-                style={{ color: colors.mid }}
-              >
+              <div className={styles.statLabel} style={{ color: colors.mid }}>
                 {label}
               </div>
             </div>
@@ -138,7 +157,9 @@ const Hero = () => {
       </div>
 
       {/* RIGHT CARD */}
-      <div className={styles.cardWrapper}>
+      <div
+        className={styles.cardWrapper}
+      >
         <div className={styles.card}>
           <div className={styles.grid}>
             {[
@@ -161,17 +182,11 @@ const Hero = () => {
             ))}
           </div>
 
-          <div
-            className={styles.cardTitle}
-            style={{ color: colors.dark }}
-          >
+          <div className={styles.cardTitle} style={{ color: colors.dark }}>
             Learning Through Play
           </div>
 
-          <div
-            className={styles.cardSubtitle}
-            style={{ color: colors.mid }}
-          >
+          <div className={styles.cardSubtitle} style={{ color: colors.mid }}>
             Art · Music · Nature · Discovery
           </div>
         </div>
@@ -202,6 +217,8 @@ const Hero = () => {
               right: b.right,
               animationDelay: `${i * 2}s`,
             }}
+            data-aos="fade-down"
+            data-aos-delay={700 + i * 200}
           >
             {b.text}
           </div>
