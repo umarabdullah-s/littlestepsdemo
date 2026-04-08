@@ -82,8 +82,8 @@ const Hero = () => {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Where Little Minds <span style={{ color: colors.coral }}>Bloom</span>{" "}
-          & <span style={{ color: colors.mint }}>Grow</span>
+         Where Child’s First Learning   <span style={{ color: colors.coral }}>Feels</span>{" "}
+           <span style={{ color: colors.mint }}>Like Home</span>
         </h1>
 
         {/* Description */}
@@ -96,6 +96,7 @@ const Hero = () => {
           A nurturing Montessori-inspired play school where every child
           discovers the joy of learning through play, creativity, and
           exploration.
+          {/* The premium playschool encourages children to explore, learn, and grow in a safe, caring, and engaging environment. */}
         </p>
 
         {/* Buttons */}

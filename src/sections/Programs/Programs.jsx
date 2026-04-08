@@ -8,41 +8,41 @@ const Programs = () => {
   const programs = [
     {
       emoji: "👶",
-      title: "Playgroup",
-      desc: "First steps into school. Sensory play and social bonding.",
-      age: "1.5 – 2.5 Years",
+      title: "Day Care",
+      desc: "Care, playtime, meals, and rest routine ",
+      age: "6 months to 2 years",
       bg: "#FFF0F0",
       accent: colors.coral,
     },
     {
       emoji: "🌟",
-      title: "Nursery",
-      desc: "Language development, creativity, and early motor skills.",
-      age: "2.5 – 3.5 Years",
+      title: "Playgroup",
+      desc: "Social skills, communication and Motor development skills",
+      age: "2 - 3 years",
       bg: "#F0FFF4",
       accent: colors.mint,
     },
     {
       emoji: "🔤",
-      title: "LKG",
-      desc: "Letters, numbers, drawing, and group activities.",
-      age: "3.5 – 4.5 Years",
+      title: "Nursery",
+      desc: "Phonics, shapes, basic learning and independent skills",
+      age: " 3 - 4 years",
       bg: "#FFF8E0",
       accent: colors.peach,
     },
     {
       emoji: "📐",
-      title: "UKG",
-      desc: "Advanced reading, writing, and school readiness.",
-      age: "4.5 – 5.5 Years",
+      title: "LKG",
+      desc: "Letters, numbers, drawing, rhymes and group activities",
+      age: "4 – 5 Years",
       bg: "#F3E8FF",
       accent: colors.lavender,
     },
     {
       emoji: "🎨",
-      title: "After School",
-      desc: "Creative workshops in art, dance, music, and coding.",
-      age: "All Ages",
+      title: "UKG",
+      desc: "Reading, writing, story telling and basic math ",
+      age: "5 - 6 years",
       bg: "#E8F8FF",
       accent: colors.sky,
     },
@@ -80,8 +80,7 @@ const Programs = () => {
 
         {/* DESCRIPTION */}
         <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
-          From toddlers to kindergarteners, we have the perfect program for
-          every stage.
+         Supporting your child’s journey through every stage of early learning.
         </p>
       </div>
 

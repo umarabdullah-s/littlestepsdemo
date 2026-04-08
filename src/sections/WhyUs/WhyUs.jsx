@@ -8,38 +8,38 @@ const WhyUs = () => {
     {
       icon: "🎓",
       bg: "rgba(255,107,107,0.15)",
-      title: "Qualified Educators",
-      desc: "All teachers are certified early childhood specialists with Montessori expertise.",
+      title: "Child-Centered Learning",
+      desc: "Learning designed around every child’s interests, pace, and development.",
     },
     {
       icon: "🔒",
       bg: "rgba(107,203,119,0.15)",
-      title: "100% Safe Campus",
-      desc: "CCTV-monitored premises, trained security, and strict visitor protocols.",
+      title: "Certified Montessori Teachers",
+      desc: "Qualified and Certified Montessori teachers guiding children with love and care.",
     },
     {
       icon: "🍎",
       bg: "rgba(255,217,61,0.15)",
-      title: "Nutritious Meals",
-      desc: "Freshly cooked, balanced meals prepared hygienically by our in-house team.",
+      title: "Safe & Friendly Environment",
+      desc: "Safe and friendly environment where children feel valued and protected.",
     },
     {
       icon: "📱",
       bg: "rgba(78,205,196,0.15)",
-      title: "Parent App",
-      desc: "Daily updates, photos, and progress reports delivered to parents via app.",
+      title: "Activity-Based Learning",
+      desc: "Interactive activities designed to make learning enjoyable and meaningful.",
     },
     {
       icon: "🌍",
       bg: "rgba(167,139,250,0.15)",
-      title: "Multilingual Learning",
-      desc: "Children learn in English and their mother tongue.",
+      title: "Regular Parent Updates",
+      desc: "Keeping parents informed with timely updates on child’s development.",
     },
     {
       icon: "🎭",
       bg: "rgba(255,165,82,0.15)",
-      title: "Extracurriculars",
-      desc: "Dance, music, art, yoga, and storytelling sessions.",
+      title: "Smart Classrooms & Play Area",
+      desc: "Modern learning spaces with fun, safe, and creative play areas.",
     },
   ];
 
@@ -61,7 +61,7 @@ const WhyUs = () => {
 
         {/* TITLE */}
         <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-          What Makes Blossom Special
+          What Makes Us Special
         </h2>
 
         {/* SUBTITLE */}
