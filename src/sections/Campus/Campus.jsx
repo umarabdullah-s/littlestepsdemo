@@ -64,7 +64,7 @@ const Campus = () => {
 
           {/* TITLE */}
           <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-            Spaces Designed for Little Explorers
+         Spaces for Every Little Step of Learning
           </h2>
 
           {/* UNDERLINE */}
@@ -76,8 +76,8 @@ const Campus = () => {
 
           {/* DESCRIPTION */}
           <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
-            Our sprawling campus is built with children in mind — bright, safe,
-            and brimming with opportunities for discovery.
+          Our campus is thoughtfully designed for children, offering a safe, vibrant environment with engaging spaces that inspire exploration, creativity, and joyful learning
+
           </p>
 
           {/* FEATURES */}

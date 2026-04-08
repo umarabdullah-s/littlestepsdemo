@@ -33,6 +33,59 @@ const Admission = () => {
       desc: "Pay the admission fee and your child's spot is secured. Welcome to Blossom!",
     },
   ];
+ const [errors, setErrors] = useState({});
+
+  // 🔹 Handle Input Change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // 🔹 Validation Function
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.parentsName.trim()) {
+      newErrors.parentsName = "Parents Name is required";
+    }
+
+    if (!formData.childName.trim()) {
+      newErrors.childName = "Child Name is required";
+    }
+
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = "Phone Number is required";
+    } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = "Phone Number must be 10 digits";
+    }
+
+    if (!formData.childAge.trim()) {
+      newErrors.childAge = "Child Age is mandatory";
+    }
+
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Invalid email format";
+    }
+
+    return newErrors;
+  };
+
+  // 🔹 Submit Handler
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = validateForm();
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      alert("Form Submitted Successfully ✅");
+      console.log(formData);
+    }
+  };
+
+
 
   return (
     <section

@@ -28,7 +28,7 @@
   position: relative;
 }
 
-/* LOGO */
+
 .logo {
   width: 13%;
 }
@@ -38,7 +38,7 @@
   object-fit: cover;
 }
 
-/* MENU */
+
 .menu {
   display: flex;
   gap: 2rem;
@@ -53,7 +53,6 @@
   font-size: 0.9rem;
 }
 
-/* BUTTON */
 .enrollBtn {
   border: none;
   padding: 10px 22px;
@@ -63,7 +62,7 @@
   cursor: pointer;
 }
 
-/* HAMBURGER */
+
 .hamburger {
   display: none;
   font-size: 1.8rem;

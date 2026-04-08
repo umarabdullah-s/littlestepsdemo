@@ -55,7 +55,7 @@ const About = () => {
 
         {/* TITLE */}
         <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-          A Home Away From Home for Your Child
+         Nurturing young minds in a safe, loving environment
         </h2>
 
         {/* UNDERLINE */}
@@ -67,9 +67,8 @@ const About = () => {
 
         {/* DESCRIPTION */}
         <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
-          Founded in 2009, Blossom Play School has been a beacon of early
-          childhood education. We believe every child is unique and deserves a
-          space where their curiosity is celebrated.
+          At Hello Little Steps, we believe that early education should be meaningful and joyful. Here, children grow in a safe, caring environment that supports self confidence, curiosity, and overall development.
+
         </p>
 
         {/* LIST */}
