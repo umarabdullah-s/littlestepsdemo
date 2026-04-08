@@ -27,6 +27,218 @@
   padding: 18px 0;
 }
 
+
+.logo {
+  font-family: "Baloo 2", cursive;
+  font-size: 1.6rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  transition: color 0.2s;
+}
+
+.enrollBtn {
+  border: none;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+
+.drawerOverlay {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  background: rgba(0,0,0,0.2);
+  z-index: 998;
+}
+
+
+.drawer {
+  position: fixed;
+  top: 70px; 
+  right: 0;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+  transform: translateY(-120%);
+  transition: transform 0.3s ease;
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  z-index: 999;
+}
+
+.openDrawer {
+  transform: translateY(0);
+}
+/* OPEN STATE */
+.openDrawer {
+  transform: translateX(0);
+}
+
+.drawer ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 🔥 CENTER horizontally */
+}
+.drawer li {
+  margin: 15px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;  
+}
+
+.drawer button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  text-align: center;   
+  padding: 10px 0;
+  cursor: pointer;
+  color: #333;
+}
+/* ANIMATION */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE */
+/* @media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .enrollBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+} */
+ @media (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+
+  .menu {
+    gap: 1.5rem;
+  }
+
+  .menu button {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 1024px) {
+  .menu {
+    display: none;
+  }
+
+  .enrollBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 14px 0;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .hamburger {
+    font-size: 1.6rem;
+  }
+
+  .drawer {
+    padding: 20px 15px;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .hamburger {
+    font-size: 1.4rem;
+  }
+
+  .drawer button {
+    font-size: 1rem;
+  }
+
+  .enrollBtn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+.scrolled {
+  background: rgba(255, 249, 240, 0.96);
+  box-shadow: 0 2px 20px rgba(45, 42, 74, 0.1);
+}
+
+.notScrolled {
+  background: rgba(255, 249, 240, 0.85);
+}
+
+.container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
 /* LOGO */
 .logo {
   font-family: "Baloo 2", cursive;
@@ -75,10 +287,10 @@
 /* DRAWER */
 .drawerOverlay {
   position: fixed;
-  top: 80px;   /* 🔥 same as drawer */
+  top: 80px;  
   left: 0;
   width: 100%;
-  height: calc(100% - 80px); /* remaining space */
+  height: calc(100% - 80px); 
   background: rgba(0,0,0,0.2);
   z-index: 998;
 }
@@ -86,7 +298,7 @@
 /* RIGHT SIDE DRAWER */
 .drawer {
   position: fixed;
-  top: 80px;   /* 🔥 push below navbar */
+  top: 80px;   
   right: 0;
   width: 100%;
   height: auto;
@@ -114,25 +326,25 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;   /* 🔥 CENTER horizontally */
+  align-items: center;  
 }
 .drawer li {
   margin: 15px 0;
   width: 100%;
   display: flex;
-  justify-content: center;  /* 🔥 CENTER button */
+  justify-content: center; 
 }
 
 .drawer button {
   background: none;
   border: none;
   font-size: 1.1rem;
-  text-align: center;   /* 🔥 CENTER text */
+  text-align: center;   
   padding: 10px 0;
   cursor: pointer;
   color: #333;
 }
-/* ANIMATION */
+
 @keyframes scaleIn {
   from {
     transform: scale(0.7);
@@ -144,20 +356,6 @@
   }
 }
 
-/* RESPONSIVE */
-/* @media (max-width: 768px) {
-  .menu {
-    display: none;
-  }
-
-  .enrollBtn {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-} */
  @media (max-width: 1200px) {
   .container {
     width: 95%;
