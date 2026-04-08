@@ -37,53 +37,57 @@ const Admission = () => {
 
   // 🔹 Handle Input Change
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const { name, value } = e.target;
+  setForm({ ...form, [name]: value });
+};
 
   // 🔹 Validation Function
   const validateForm = () => {
-    const newErrors = {};
+  const newErrors = {};
 
-    if (!formData.parentsName.trim()) {
-      newErrors.parentsName = "Parents Name is required";
-    }
+  if (!form.parent.trim()) {
+    newErrors.parent = "Parent name is required";
+  }
 
-    if (!formData.childName.trim()) {
-      newErrors.childName = "Child Name is required";
-    }
+  if (!form.child.trim()) {
+    newErrors.child = "Child name is required";
+  }
 
-    if (!formData.phoneNumber) {
-      newErrors.phoneNumber = "Phone Number is required";
-    } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = "Phone Number must be 10 digits";
-    }
+  if (!form.phone) {
+    newErrors.phone = "Phone number is required";
+  } else if (!/^\d{10}$/.test(form.phone)) {
+    newErrors.phone = "Phone must be 10 digits";
+  }
 
-    if (!formData.childAge.trim()) {
-      newErrors.childAge = "Child Age is mandatory";
-    }
+  if (!form.age.trim()) {
+    newErrors.age = "Child age is required";
+  }
 
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Invalid email format";
-    }
+  if (!form.email) {
+    newErrors.email = "Email is required";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    newErrors.email = "Invalid email";
+  }
 
-    return newErrors;
-  };
+  if (!form.program) {
+    newErrors.program = "Select a program";
+  }
+
+  return newErrors;
+};
 
   // 🔹 Submit Handler
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = (e) => {
+  e.preventDefault();
 
-    const validationErrors = validateForm();
-    setErrors(validationErrors);
+  const validationErrors = validateForm();
+  setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length === 0) {
-      alert("Form Submitted Successfully ✅");
-      console.log(formData);
-    }
-  };
+  if (Object.keys(validationErrors).length === 0) {
+    alert("Form Submitted Successfully ✅");
+    console.log(form);
+  }
+};
 
 
 
@@ -242,13 +246,11 @@ const Admission = () => {
 
           {/* BUTTON */}
           <button
-            className={styles.button}
-            data-aos="fade-up"
-            data-aos-delay="1100"
-            onClick={() => alert("Thank you! We will contact you shortly 🌸")}
-          >
-            Submit Enquiry →
-          </button>
+  className={styles.button}
+  onClick={handleSubmit}
+>
+  Submit Enquiry →
+</button>
         </div>
       </div>
     </section>
