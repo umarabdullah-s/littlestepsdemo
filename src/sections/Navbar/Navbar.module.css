@@ -24,18 +24,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0;
+  padding: 10px 0;
   position: relative;
 }
 
 
 .logo {
-  font-family: "Baloo 2", cursive;
-  font-size: 1.6rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  width: 13%;
+}
+.logo img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 
@@ -165,10 +165,28 @@
   }
 
   .container .enrollBtn {
-    display: none; /* hide only navbar button */
+    display: none; 
   }
 
   .hamburger {
     display: block;
+  }
+}
+@media screen and (max-width:576px) {
+  .logo {
+    width: 40%;
+  }
+}
+@media screen and (min-width:579px) and (max-width:768px) {
+  .logo {
+    width: 30%;
+  }
+}
+@media screen and (min-width:769px) and (max-width:992px) {
+  .container{
+    width: 95%;
+  }
+  .logo {
+    width: 20%;
   }
 }
