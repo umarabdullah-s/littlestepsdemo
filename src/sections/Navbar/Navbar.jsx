@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import colors from "@/layout/utils/color";
-import img from "@/assets/images/logo.png";
+import img from "@/assets/images/logo1.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -33,7 +33,7 @@ const Navbar = () => {
       <div className={styles.container}>
         {/* LOGO */}
         <div className={styles.logo} style={{ color: colors.coral }}>
-          {/* <img src={img.src} alt="img"/> */}
+          <img src={img.src} alt="img"/>
         </div>
 
         {/* DESKTOP MENU */}
