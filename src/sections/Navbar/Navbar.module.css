@@ -26,20 +26,24 @@
   justify-content: space-between;
   padding: 18px 0;
   position: relative;
+  border: 1px solid red;
 }
 
 /* LOGO */
 .logo {
-  font-family: "Baloo 2", cursive;
-  font-size: 1.6rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  border: 1px solid red;
+  /* height: 60px; */
+  width: 20%;
+}
+.logo img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* MENU */
 .menu {
+    border: 1px solid red;
   display: flex;
   gap: 2rem;
   list-style: none;
@@ -55,6 +59,7 @@
 
 /* BUTTON */
 .enrollBtn {
+    border: 1px solid red;
   border: none;
   padding: 10px 22px;
   border-radius: 50px;
