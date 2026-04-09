@@ -6,24 +6,24 @@ import styles from "./campus.module.css";
 
 const Campus = () => {
   const features = [
-    ["🏊", "Splash Pool"],
+    ["🏊", "SmartClassRoom"],
     ["🛝", "Play Park"],
     ["📚", "Mini Library"],
     ["🎨", "Art Studio"],
-    ["🎵", "Music Room"],
-    ["🌱", "Garden Trail"],
+    ["🎵", "Dining Area"],
+    ["🌱", "DanceRoom"],
   ];
 
   const tiles = [
     {
       emoji: "🛝",
-      label: "Play Park",
+      label: "SmartClassRoom",
       bg: "linear-gradient(135deg, #FF6B6B, #FF8E53)",
       gridRow: "1 / 3",
     },
     {
       emoji: "🎨",
-      label: "Art Room",
+      label: "Playpark",
       bg: "linear-gradient(135deg, #6BCB77, #4ECDC4)",
     },
     {
@@ -33,12 +33,17 @@ const Campus = () => {
     },
     {
       emoji: "🎵",
-      label: "Music",
+      label: "ArtRoom",
       bg: "linear-gradient(135deg, #A78BFA, #6BCB77)",
     },
     {
       emoji: "🌱",
-      label: "Garden",
+      label: "DiningArea",
+      bg: "linear-gradient(135deg, #4ECDC4, #A78BFA)",
+    },
+     {
+      emoji: "🌱",
+      label: "DianceRoom",
       bg: "linear-gradient(135deg, #4ECDC4, #A78BFA)",
     },
   ];

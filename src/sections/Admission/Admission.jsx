@@ -17,21 +17,20 @@ const Admission = () => {
 
   const steps = [
     {
-      title: "Fill the Enquiry Form",
-      desc: "Share your child's details and preferred program with us online or in person.",
+      title: "FILL THE ENQUIRY FORM",
+      desc: "Share your child’s basic details and preferred program with us online or during your visit.",
     },
     {
       title: "School Tour & Interaction",
       desc: "Visit our campus, meet our teachers, and let your child experience the environment.",
     },
     {
-      title: "Submit Documents",
-      desc: "Submit birth certificate, immunization records, and photographs.",
+      title: "Submit Documents photos, and other documents.",
+      desc: "Submit birth certificate, ",
     },
     {
-      title: "Confirm Admission 🎉",
-      desc: "Pay the admission fee and your child's spot is secured. Welcome to Blossom!",
-    },
+      title: "Confirm Admission ",
+      desc: "Complete the admission process and your child's spot is secured. Welcome to Alo Little Steps!", },
   ];
  const [errors, setErrors] = useState({});
 
@@ -112,7 +111,7 @@ const Admission = () => {
           </div>
 
           <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-            Enroll Your Child Today
+          Enroll your child at Alo Little Steps through a simple four step process.
           </h2>
 
      
@@ -124,7 +123,7 @@ const Admission = () => {
 
      
           <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
-            Join the Blossom family! Our simple 4-step process makes enrollment
+            Join the Alo Little Steps family! Our simple 4-step process makes enrollment
             easy and stress-free.
           </p>
 

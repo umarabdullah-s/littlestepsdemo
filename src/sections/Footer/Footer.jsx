@@ -19,7 +19,7 @@ const Footer = () => {
         data-aos-delay="100"
         data-aos-duration="1000"
       >
-        🌸 Blossom <span className={styles.highlight}>Play School</span>
+        Alo <span className={styles.highlight}>Little Steps</span>
       </div>
 
       <div
@@ -46,12 +46,12 @@ const Footer = () => {
       </div>
 
       <p className={styles.contact}>
-        📍 123 Garden Lane, Chennai, Tamil Nadu &nbsp;|&nbsp; 📞 +91 98765 43210
-        &nbsp;|&nbsp; ✉️ hello@blossomplayschool.in
+        📍kesari street, 13/B1, Kesari St, opposite Eden Hall, Nagercoil, Tamil Nadu &nbsp;|&nbsp; Phone: +91 84386 99145
+        &nbsp;|&nbsp; ✉️ hello@alolittlestepsplayschool.in
       </p>
 
       <p className={styles.copy}>
-        © 2025 Blossom Play School. All rights reserved.
+        © 2026 Alo Little Steps. All rights reserved.
       </p>
     </footer>
   );

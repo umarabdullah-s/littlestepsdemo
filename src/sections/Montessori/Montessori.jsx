@@ -10,19 +10,19 @@ const Montessori = () => {
       icon: "🧠",
       bg: "#F3E8FF",
       title: "Child-Led Learning",
-      desc: "Children choose their activities, fostering intrinsic motivation and independence.",
+      desc: "Children choose activities, building independence and self-confidence naturally.",
     },
     {
       icon: "✋",
       bg: "#E8F8FF",
-      title: "Hands-On Materials",
-      desc: "Authentic Montessori materials engage all senses and make abstract concepts tangible.",
+      title: "SENSORIAL LEARNING",
+      desc: "Children learn through touch, sight, and hands-on learning",
     },
     {
       icon: "🌿",
       bg: "#FFF8E0",
-      title: "Prepared Environment",
-      desc: "Every corner of our classroom is thoughtfully designed to invite exploration.",
+      title: "SAFE ENVIRONMENT",
+      desc: "A safe environment where children feel secure and confident",
     },
   ];
 
@@ -103,8 +103,8 @@ const Montessori = () => {
             <div className={styles.quoteSymbol}>"</div>
 
             <p className={styles.quoteText}>
-              The greatest gifts we can give our children are the roots of
-              responsibility and the wings of independence.
+              ”A child’s needs are simple, and a happy childhood needs only simple surroundings”
+
             </p>
 
             <div className={styles.quoteAuthor}>— Dr. Maria Montessori</div>
