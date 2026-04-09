@@ -111,7 +111,8 @@ const Admission = () => {
           </div>
 
           <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-          Enroll your child at Alo Little Steps through a simple four step process.
+         START YOUR CHILD’S EARLY LEARNING
+
           </h2>
 
      
@@ -123,8 +124,8 @@ const Admission = () => {
 
      
           <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
-            Join the Alo Little Steps family! Our simple 4-step process makes enrollment
-            easy and stress-free.
+          Enroll your child at Alo Little Steps through a simple four step process.
+
           </p>
 
      
@@ -159,7 +160,7 @@ const Admission = () => {
             data-aos="fade-down"
             data-aos-delay="600"
           >
-            📋 Enquiry Form
+             Enquiry Form
           </h3>
 
         

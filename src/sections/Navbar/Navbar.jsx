@@ -20,7 +20,7 @@ const Navbar = () => {
     setOpen(false);
   };
 
-  const menuItems = ["about", "programs", "campus", "montessori", "admission"];
+  const menuItems = ["About", "Programs", "Campus", "Montessori", "Admission"];
 
   return (
     <nav
@@ -40,10 +40,7 @@ const Navbar = () => {
         <ul className={styles.menu}>
           {menuItems.map((id) => (
             <li key={id}>
-              <button
-                onClick={() => scrollTo(id)}
-                style={{ color: colors.mid }}
-              >
+              <button onClick={() => scrollTo(id)}>
                 {id}
               </button>
             </li>

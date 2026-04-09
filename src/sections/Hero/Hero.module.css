@@ -1,11 +1,17 @@
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #FFF5E6 0%, #E8F8F5 50%, #F3E8FF 100%);
+ background: linear-gradient(
+    135deg,
+    #FFF8F5 0%,
+    #FFEFF3 20%,
+    #EFFFFA 45%,
+    #EAF4FF 70%,
+    #FFFBE6 100%
+  );
   
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 🔥 ADD THIS */
-  
+  justify-content: space-between; 
   padding: 100px 5% 60px;
   position: relative;
   overflow: hidden;
@@ -48,7 +54,7 @@
 .heading {
   font-family: 'Baloo 2', cursive;
   font-size: clamp(2.4rem, 5vw, 3.8rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.15;
   margin: 0;
 }
@@ -71,6 +77,7 @@
   padding: 14px 30px;
   border-radius: 50px;
   font-weight: 700;
+  color:white;
   font-size: 1rem;
   border: none;
   cursor: pointer;

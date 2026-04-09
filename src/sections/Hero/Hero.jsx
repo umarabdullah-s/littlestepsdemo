@@ -1,8 +1,19 @@
+"use client";
 import React from "react";
-import colors from "../../layout/utils/color";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
+ const colors = {
+  coral: "#FF6B81",
+  mint: "#6ED384", // ✅ updated to logo green
+  blue: "#5DADE2",
+  yellow: "#FFD93D",
+  dark: "#555555",
+  mid: "#777777",
+};
+
   return (
     <section id="hero" className={styles.hero}>
       {/* BG Shapes */}
@@ -10,34 +21,30 @@ const Hero = () => {
         {
           w: 300,
           h: 300,
-          bg: "rgba(255,107,107,0.1)",
+          bg: "rgba(255,107,129,0.12)",
           top: -80,
           right: -60,
-          delay: 0,
         },
         {
           w: 200,
           h: 200,
-          bg: "rgba(107,203,119,0.12)",
+          bg: "rgba(110,211,207,0.15)",
           bottom: 60,
           left: -40,
-          delay: 2,
         },
         {
           w: 150,
           h: 150,
-          bg: "rgba(255,217,61,0.15)",
+          bg: "rgba(255,217,61,0.18)",
           top: "40%",
           right: "20%",
-          delay: 4,
         },
         {
           w: 100,
           h: 100,
-          bg: "rgba(78,205,196,0.15)",
+          bg: "rgba(93,173,226,0.15)",
           top: "20%",
           left: "30%",
-          delay: 1,
         },
       ].map((s, i) => (
         <div
@@ -51,60 +58,46 @@ const Hero = () => {
             bottom: s.bottom,
             right: s.right,
             left: s.left,
-            animationDelay: `${s.delay}s`,
           }}
         />
       ))}
 
       {/* LEFT CONTENT */}
-      <div
-        className={styles.content}
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
+      <div className={styles.content} data-aos="fade-up">
         {/* Badge */}
         <div
           className={styles.badge}
           style={{
-            border: `2px solid ${colors.sun}`,
-            color: colors.peach,
+            border: `2px solid ${colors.yellow}`,
+            color: colors.coral,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            padding: "8px 16px",
+            borderRadius: "20px",
+            fontWeight: "600",
           }}
-          data-aos="fade-down"
-          data-aos-delay="100"
         >
-          ⭐ Admissions Open 2025–26
+          <FontAwesomeIcon icon={faGraduationCap} />
+          Admissions Open 2025–26
         </div>
 
         {/* Heading */}
-        <h1
-          className={styles.heading}
-          style={{ color: colors.dark }}
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-         Where Child’s First Learning   <span style={{ color: colors.coral }}>Feels</span>{" "}
-           <span style={{ color: colors.mint }}>Like Home</span>
+        <h1 className={styles.heading} style={{ color: colors.blue }}>
+          Where Learning Begins{" "}
+          <span style={{ color: colors.coral }}>with Little </span>
+          <span style={{ color: colors.mint }}>Steps</span>
         </h1>
 
         {/* Description */}
-        <p
-          className={styles.description}
-          style={{ color: colors.mid }}
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
+        <p className={styles.description} style={{ color: colors.mid }}>
           A nurturing Montessori-inspired play school where every child
           discovers the joy of learning through play, creativity, and
           exploration.
-          {/* The premium playschool encourages children to explore, learn, and grow in a safe, caring, and engaging environment. */}
         </p>
 
         {/* Buttons */}
-        <div
-          className={styles.buttonGroup}
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
+        <div className={styles.buttonGroup}>
           <button
             className={styles.primaryBtn}
             style={{ background: colors.coral }}
@@ -120,7 +113,7 @@ const Hero = () => {
           <button
             className={styles.secondaryBtn}
             style={{
-              border: `2px solid ${colors.light}`,
+              border: `2px solid ${colors.mint}`,
               color: colors.dark,
             }}
             onClick={() =>
@@ -139,17 +132,18 @@ const Hero = () => {
             ["500+", "Happy Children"],
             ["15+", "Years of Excellence"],
             ["40+", "Expert Educators"],
-          ].map(([num, label], i) => (
-            <div
-              key={label}
-              className={styles.statBox}
-              data-aos="fade-up"
-              data-aos-delay={600 + i * 150}
-            >
-              <div className={styles.statNumber} style={{ color: colors.dark }}>
+          ].map(([num, label]) => (
+            <div key={label} className={styles.statBox}>
+              <div
+                className={styles.statNumber}
+                style={{ color: colors.dark }}
+              >
                 {num}
               </div>
-              <div className={styles.statLabel} style={{ color: colors.mid }}>
+              <div
+                className={styles.statLabel}
+                style={{ color: colors.mid }}
+              >
                 {label}
               </div>
             </div>
@@ -158,27 +152,25 @@ const Hero = () => {
       </div>
 
       {/* RIGHT CARD */}
-      <div
-        className={styles.cardWrapper}
-      >
+      <div className={styles.cardWrapper}>
         <div className={styles.card}>
           <div className={styles.grid}>
             {[
-              ["🎨", "#FFF0F0"],
-              ["📚", "#F0FFF4"],
-              ["🎵", "#FFF8E0"],
-              ["🌿", "#E8F8FF"],
-              ["🔢", "#F8E8FF"],
-              ["🌍", "#FFF0F0"],
-              ["🧩", "#E8FFF0"],
-              ["⭐", "#FFF8E0"],
-            ].map(([e, bg], i) => (
+              ["🎨", "#FFF0F3"],
+              ["📚", "#F0FFFA"],
+              ["🎵", "#FFFBE6"],
+              ["🌿", "#EAF4FF"],
+              ["🔢", "#F5ECFF"],
+              ["🌍", "#FFF0F3"],
+              ["🧩", "#EFFFF7"],
+              ["⭐", "#FFFBE6"],
+            ].map(([icon, bg], i) => (
               <div
                 key={i}
                 className={styles.gridItem}
                 style={{ background: bg }}
               >
-                {e}
+                {icon}
               </div>
             ))}
           </div>
@@ -202,7 +194,7 @@ const Hero = () => {
           },
           {
             text: "🏆 Award-Winning Curriculum",
-            color: colors.lavender,
+            color: colors.blue,
             bottom: -20,
             right: -20,
           },
@@ -218,8 +210,6 @@ const Hero = () => {
               right: b.right,
               animationDelay: `${i * 2}s`,
             }}
-            data-aos="fade-down"
-            data-aos-delay={700 + i * 200}
           >
             {b.text}
           </div>

@@ -11,14 +11,36 @@
   font-family: "Baloo 2", cursive;
   font-size: 1.6rem;
   font-weight: 800;
-  color: white;
+  color: rgb(50, 110, 160);
   margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
 }
-
+.blue {
+  color: #5DADE2;
+}
+.highlight{
+  color:#FF6B81;
+}
+.coral {
+  color: #FF6B81;
+}
+.mint {
+  color: #6ED384;
+}
 .highlight {
   color: var(--mint);
 }
+.logo {
+  display: flex;
+  align-items: center;
+}
 
+.logo img {
+  height: 60px;   /* adjust based on your navbar */
+  width: auto;
+  object-fit: contain;
+}
 .nav {
   display: flex;
   justify-content: center;

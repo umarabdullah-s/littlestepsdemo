@@ -120,7 +120,19 @@
   color: #333;
   transition: all 0.2s ease;
 }
+.menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #777777; /* default */
+  transition: all 0.3s ease;
+}
 
+.menu button:hover {
+  color: #FF6B81; /* coral (logo color) */
+}
 .menuItem:hover {
   color: #ff6b6b; /* optional hover */
 }
