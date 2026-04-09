@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <Fragment>
       <Head>
-        <title>Home - Boiler Code</title>
+        <title>ALO Little Steps</title>
         {/* enter seo here */}
       </Head>
       <Navbar/>

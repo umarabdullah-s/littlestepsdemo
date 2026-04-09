@@ -12,8 +12,8 @@ export default function Document() {
           {/* manifest import */}
            <link rel="manifest" href="/manifest.json" />
            {/* favicon */}
-           <link rel="icon" href="/favicon1.png" sizes="192x192" />
-           <link rel="icon" href="/favicon2.png" sizes="512x512" />
+           <link rel="icon" href="/fav.png" sizes="192x192" />
+          
       </Head>
       <body>
         <Main />
