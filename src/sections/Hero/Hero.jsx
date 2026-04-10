@@ -7,7 +7,7 @@ import styles from "./Hero.module.css";
 const Hero = () => {
  const colors = {
   coral: "#FF6B81",
-  mint: "#6ED384", // ✅ updated to logo green
+  mint: "#6ED384", 
   blue: "#5DADE2",
   yellow: "#FFD93D",
   dark: "#555555",
@@ -62,9 +62,9 @@ const Hero = () => {
         />
       ))}
 
-      {/* LEFT CONTENT */}
+   
       <div className={styles.content} data-aos="fade-up">
-        {/* Badge */}
+    
         <div
           className={styles.badge}
           style={{
@@ -82,7 +82,7 @@ const Hero = () => {
           Admissions Open 2025–26
         </div>
 
-        {/* Heading */}
+      
         <h1 className={styles.heading} style={{ color: colors.blue }}>
           Where Learning Begins{" "}
           <span style={{ color: colors.coral }}>with Little </span>
@@ -96,7 +96,7 @@ const Hero = () => {
           exploration.
         </p>
 
-        {/* Buttons */}
+  
         <div className={styles.buttonGroup}>
           <button
             className={styles.primaryBtn}
@@ -151,7 +151,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* RIGHT CARD */}
+      
       <div className={styles.cardWrapper}>
         <div className={styles.card}>
           <div className={styles.grid}>
@@ -184,7 +184,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Floating Badges */}
+       
         {[
           {
             text: "🌟 Top Rated School",
