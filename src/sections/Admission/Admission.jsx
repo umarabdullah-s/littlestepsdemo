@@ -4,19 +4,17 @@ import SectionTag from "@/layout/WebLayout";
 import colors from "@/layout/utils/color";
 import styles from "./admission.module.css";
 import { submitEnquiry } from "@/api/Serviceapi"
-import { getEnquiryList } from "@/api/Serviceapi";
+
 
 const Admission = () => {
   const [form, setForm] = useState({
-    parent: "",
-    child: "",
-    phone: "",
-    age: "",
-    email: "",
-    program: "",
-    year: "2025–2026",
-  });
-
+  parentsName: "",
+  childsName: "",
+  phoneNumber: "",
+  age: "",
+  email: "",
+  programOfInterest: "",
+});
 
   const [errors, setErrors] = useState({});
 const [loading, setLoading] = useState(false);
@@ -50,39 +48,39 @@ const [enquiries,setEnquiries]=useState([])
   };
 
   // ✅ Validation
-  const validateForm = () => {
-    const newErrors = {};
+ const validateForm = () => {
+  const newErrors = {};
 
-    if (!form.parent.trim()) {
-      newErrors.parent = "Parent name is required";
-    }
+  if (!form.parentsName.trim()) {
+    newErrors.parentsName = "Parent name is required";
+  }
 
-    if (!form.child.trim()) {
-      newErrors.child = "Child name is required";
-    }
+  if (!form.childsName.trim()) {
+    newErrors.childsName = "Child name is required";
+  }
 
-    if (!form.phone) {
-      newErrors.phone = "Phone number is required";
-    } else if (!/^\d{10}$/.test(form.phone)) {
-      newErrors.phone = "Phone must be 10 digits";
-    }
+  if (!form.phoneNumber) {
+    newErrors.phoneNumber = "Phone number is required";
+  } else if (!/^\d{10}$/.test(form.phoneNumber.replace(/\D/g, ""))) {
+    newErrors.phoneNumber = "Phone must be 10 digits";
+  }
 
-    if (!form.age.trim()) {
-      newErrors.age = "Child age is required";
-    }
+  if (!form.age) {
+    newErrors.age = "Child age is required";
+  }
 
-    if (!form.email) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = "Invalid email";
-    }
+  if (!form.email) {
+    newErrors.email = "Email is required";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    newErrors.email = "Invalid email";
+  }
 
-    if (!form.program) {
-      newErrors.program = "Select a program";
-    }
+  if (!form.programOfInterest) {
+    newErrors.programOfInterest = "Select a program";
+  }
 
-    return newErrors;
-  };
+  return newErrors;
+};
 const programMap = {
   "Playgroup (1.5 – 2.5 Years)": "playgroup",
   "Nursery (2.5 – 3.5 Years)": "nursery",
@@ -102,58 +100,48 @@ const handleSubmit = async (e) => {
   try {
     setLoading(true);
 
-   const payload = {
-  parentsName: form.parent,
-  childsName: form.child,
-  phoneNumber: "+91 " + form.phone,
-  email: form.email,
-  programOfInterest: programMap[form.program], // 🔥 FIX HERE
-};
-    console.log("Payload:", payload);
+    const payload = {
+      parentsName: form.parentsName,
+      childsName: form.childsName,
+      phoneNumber: form.phoneNumber,
+      age: Number(form.age),
+      email: form.email,
+      programOfInterest: form.programOfInterest,
+    };
+
+    console.log("📦 Payload:", payload);
 
     const res = await submitEnquiry(payload);
 
-    console.log("Success:", res);
+    console.log("✅ Success Response:", res?.data);
+
     alert("✅ Enquiry Submitted Successfully 🎉");
 
-    // ✅ Reset form
+    // reset form
     setForm({
-      parent: "",
-      child: "",
-      phone: "",
+      parentsName: "",
+      childsName: "",
+      phoneNumber: "",
       age: "",
       email: "",
-      program: "",
-      year: "2025–2026",
+      programOfInterest: "",
     });
 
+    setErrors({});
+
   } catch (error) {
-    console.error("Error:", error?.response?.data);
-    alert(error?.response?.data?.message || "❌ Submission failed");
+    console.log("❌ FULL ERROR:", error);
+    console.log("❌ RESPONSE:", error?.response?.data);
+    console.log("❌ STATUS:", error?.response?.status);
+
+    const msg =
+      error?.response?.data?.message ||
+      error?.message ||
+      "Submission failed";
+
+    alert(msg);
   } finally {
     setLoading(false);
-  }
-};
-useEffect(() => {
-  fetchEnquiries();
-}, []);
-
-const fetchEnquiries = async () => {
-  try {
-    const res = await getEnquiryList();
-
-    console.log("FULL RESPONSE:", res);
-
-    const data =
-      res?.data?.data || 
-      res?.data?.enquiries || 
-      res?.data || 
-      [];
-
-    setEnquiries(data);
-
-  } catch (error) {
-    console.error("GET ERROR:", error);
   }
 };
   return (
@@ -206,101 +194,91 @@ const fetchEnquiries = async () => {
 
         {/* ✅ FORM */}
         <form className={styles.formBox} onSubmit={handleSubmit}>
-          
-          <h3 className={styles.formTitle}>Enquiry Form</h3>
+  <h3 className={styles.formTitle}>Enquiry Form</h3>
 
-          {/* Parent + Child */}
-          <div className={styles.grid2}>
-            {[
-              ["Parent's Name", "text", "Full name", "parent"],
-              ["Child's Name", "text", "Child's name", "child"],
-            ].map(([label, type, ph, key], i) => (
-              <div key={key}>
-                <label className={styles.label}>{label}</label>
-                <input
-                  type={type}
-                  name={key}
-                  placeholder={ph}
-                  value={form[key]}
-                  onChange={handleChange}
-                  className={styles.input}
-                />
-                {errors[key] && (
-                  <p className={styles.error}>{errors[key]}</p>
-                )}
-              </div>
-            ))}
-          </div>
+  {/* Parent + Child */}
+  <div className={styles.grid2}>
+    {[
+      ["Parent's Name", "text", "Full name", "parentsName"],
+      ["Child's Name", "text", "Child's name", "childsName"],
+    ].map(([label, type, ph, key]) => (
+      <div key={key}>
+        <label className={styles.label}>{label}</label>
+        <input
+          type={type}
+          name={key}
+          placeholder={ph}
+          value={form[key]}
+          onChange={handleChange}
+          className={styles.input}
+        />
+        {errors[key] && <p className={styles.error}>{errors[key]}</p>}
+      </div>
+    ))}
+  </div>
 
-          {/* Phone + Age */}
-          <div className={styles.grid2}>
-            {[
-              ["Phone Number", "tel", "+91 XXXXX XXXXX", "phone"],
-              ["Child's Age", "text", "e.g. 3 years", "age"],
-            ].map(([label, type, ph, key], i) => (
-              <div key={key}>
-                <label className={styles.label}>{label}</label>
-                <input
-                  type={type}
-                  name={key}
-                  placeholder={ph}
-                  value={form[key]}
-                  onChange={handleChange}
-                  className={styles.input}
-                />
-                {errors[key] && (
-                  <p className={styles.error}>{errors[key]}</p>
-                )}
-              </div>
-            ))}
-          </div>
+  {/* Phone + Age */}
+  <div className={styles.grid2}>
+    {[
+      ["Phone Number", "tel", "+91 XXXXX XXXXX", "phoneNumber"],
+      ["Child's Age", "number", "e.g. 3", "age"],
+    ].map(([label, type, ph, key]) => (
+      <div key={key}>
+        <label className={styles.label}>{label}</label>
+        <input
+          type={type}
+          name={key}
+          placeholder={ph}
+          value={form[key]}
+          onChange={handleChange}
+          className={styles.input}
+        />
+        {errors[key] && <p className={styles.error}>{errors[key]}</p>}
+      </div>
+    ))}
+  </div>
 
-          {/* Email */}
-          <div className={styles.inputGroup}>
-            <label className={styles.label}>Email Address</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="your@email.com"
-              value={form.email}
-              onChange={handleChange}
-              className={styles.input}
-            />
-            {errors.email && (
-              <p className={styles.error}>{errors.email}</p>
-            )}
-          </div>
+  {/* Email */}
+  <div className={styles.inputGroup}>
+    <label className={styles.label}>Email Address</label>
+    <input
+      type="email"
+      name="email"
+      placeholder="your@email.com"
+      value={form.email}
+      onChange={handleChange}
+      className={styles.input}
+    />
+    {errors.email && <p className={styles.error}>{errors.email}</p>}
+  </div>
 
-          {/* Program */}
-          <div className={styles.inputGroup}>
-            <label className={styles.label}>Program of Interest</label>
-            <select
-              name="program"
-              value={form.program}
-              onChange={handleChange}
-              className={styles.select}
-            >
-              <option value="">Select a program...</option>
-              {[
-                "Playgroup (1.5 – 2.5 Years)",
-                "Nursery (2.5 – 3.5 Years)",
-                "LKG (3.5 – 4.5 Years)",
-                "UKG (4.5 – 5.5 Years)",
-                "After School Programs",
-              ].map((p) => (
-                <option key={p}>{p}</option>
-              ))}
-            </select>
-            {errors.program && (
-              <p className={styles.error}>{errors.program}</p>
-            )}
-          </div>
+  {/* Program */}
+  <div className={styles.inputGroup}>
+    <label className={styles.label}>Program of Interest</label>
+   <select
+  name="programOfInterest"
+  value={form.programOfInterest}
+  onChange={handleChange}
+  className={styles.select}
+>
+  <option value="">Select a program...</option>
 
-          {/* Submit */}
-        <button type="submit" disabled={loading} className={styles.button}>
-  {loading ? "Submitting..." : "Submit Enquiry →"}
-</button>
-        </form>
+  <option value="playgroup">Playgroup (1.5 – 2.5 Years)</option>
+  <option value="nursery">Nursery (2.5 – 3.5 Years)</option>
+  <option value="lkg">LKG (3.5 – 4.5 Years)</option>
+  <option value="ukg">UKG (4.5 – 5.5 Years)</option>
+  <option value="daycare">After School Programs</option>
+</select>
+    {errors.programOfInterest && (
+      <p className={styles.error}>{errors.programOfInterest}</p>
+    )}
+  </div>
+
+  {/* Submit */}
+  <button type="submit" disabled={loading} className={styles.button}>
+    {loading ? "Submitting..." : "Submit Enquiry →"}
+  </button>
+</form>
       </div>
     </section>
   );

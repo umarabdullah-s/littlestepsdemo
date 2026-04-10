@@ -13,41 +13,39 @@ const Campus = () => {
     ["🎵", "Dining Area"],
     ["🌱", "DanceRoom"],
   ];
-
-  const tiles = [
-    {
-      emoji: "🛝",
-      label: "SmartClassRoom",
-      bg: "linear-gradient(135deg, #FF6B6B, #FF8E53)",
-      gridRow: "1 / 3",
-    },
-    {
-      emoji: "🎨",
-      label: "Playpark",
-      bg: "linear-gradient(135deg, #6BCB77, #4ECDC4)",
-    },
-    {
-      emoji: "📚",
-      label: "Library",
-      bg: "linear-gradient(135deg, #FFD93D, #FF6B6B)",
-    },
-    {
-      emoji: "🎵",
-      label: "ArtRoom",
-      bg: "linear-gradient(135deg, #A78BFA, #6BCB77)",
-    },
-    {
-      emoji: "🌱",
-      label: "DiningArea",
-      bg: "linear-gradient(135deg, #4ECDC4, #A78BFA)",
-    },
-     {
-      emoji: "🌱",
-      label: "DianceRoom",
-      bg: "linear-gradient(135deg, #4ECDC4, #A78BFA)",
-    },
-  ];
-
+const tiles = [
+  {
+    emoji: "🏫",
+    label: "Smart Classroom",
+    bg: "linear-gradient(135deg, #FF6B6B, #FF8E53)",
+    gridRow: "1 / 3",
+  },
+  {
+    emoji: "🛝",
+    label: "Play Park",
+    bg: "linear-gradient(135deg, #6BCB77, #4ECDC4)",
+  },
+  {
+    emoji: "📚",
+    label: "Library",
+    bg: "linear-gradient(135deg, #FFD93D, #FF6B6B)",
+  },
+  {
+    emoji: "🎨",
+    label: "Art Room",
+    bg: "linear-gradient(135deg, #A78BFA, #6BCB77)",
+  },
+  {
+    emoji: "🍽️",
+    label: "Dining Area",
+    bg: "linear-gradient(135deg, #4ECDC4, #A78BFA)",
+  },
+  {
+    emoji: "💃",
+    label: "Dance Room",
+    bg: "linear-gradient(135deg, #4ECDC4, #A78BFA)",
+  },
+];
   return (
     <section
       id="campus"
