@@ -1,7 +1,8 @@
 .footer {
   background: var(--dark);
   color: rgba(255, 255, 255, 0.6);
-  padding: 40px 5%;
+  /* padding: 40px 5%; */
+  padding:30px 20px;
   text-align: center;
   font-family: "Nunito", sans-serif;
   font-size: 0.88rem;
@@ -36,18 +37,18 @@
   align-items: center;
 }
 
-.logo img {
-  height: 60px;   /* adjust based on your navbar */
-  width: auto;
-  object-fit: contain;
-}
+
 .nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
   margin: 16px 0;
 }
-
+.footerImg {
+  width: 140px;
+  height: 40px;
+  object-fit: cover;
+}
 .navBtn {
   background: none;
   border: none;

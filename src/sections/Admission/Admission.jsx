@@ -4,7 +4,7 @@ import SectionTag from "@/layout/WebLayout";
 import colors from "@/layout/utils/color";
 import styles from "./admission.module.css";
 import { submitEnquiry } from "@/api/Serviceapi"
-
+import { toast } from "react-toastify";
 
 const Admission = () => {
   const [form, setForm] = useState({
@@ -109,13 +109,13 @@ const handleSubmit = async (e) => {
       programOfInterest: form.programOfInterest,
     };
 
-    console.log("📦 Payload:", payload);
+    console.log(" Payload:", payload);
 
     const res = await submitEnquiry(payload);
 
-    console.log("✅ Success Response:", res?.data);
+    console.log(" Success Response:", res?.data);
 
-    alert("✅ Enquiry Submitted Successfully 🎉");
+    toast.success("Enquiry Submitted Successfully ");
 
     // reset form
     setForm({
@@ -139,7 +139,7 @@ const handleSubmit = async (e) => {
       error?.message ||
       "Submission failed";
 
-    alert(msg);
+   toast.error(msg);
   } finally {
     setLoading(false);
   }

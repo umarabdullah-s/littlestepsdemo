@@ -2,7 +2,7 @@
 import React from "react";
 import colors from "@/layout/utils/color";
 import styles from "./footer.module.css";
-
+import Image from "next/image";
 const Footer = () => {
   return (
     <footer
@@ -13,14 +13,20 @@ const Footer = () => {
         "--sun": colors.sun,
       }}
     >
-      <div
-        className={styles.logo}
-        data-aos="fade-down"
-        data-aos-delay="100"
-        data-aos-duration="1000"
-      >
-        Alo <span className={styles.highlight}>Little Steps</span>
-      </div>
+     <div
+  className={styles.logo}
+  data-aos="fade-down"
+  data-aos-delay="100"
+  data-aos-duration="1000"
+>
+<Image
+  src="/steps.png"
+  alt="Alo Little Steps"
+  width={140}
+  height={0}
+  className={styles.footerImg}
+/>
+</div>
 
       <div
         className={styles.nav}
