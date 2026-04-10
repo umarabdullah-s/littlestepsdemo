@@ -16,7 +16,7 @@ const Admission = () => {
     program: "",
     year: "2025–2026",
   });
-  
+
 
   const [errors, setErrors] = useState({});
 const [loading, setLoading] = useState(false);
@@ -140,7 +140,7 @@ useEffect(() => {
 
 const fetchEnquiries = async () => {
   try {
-    const res = await getEnquiryList(1);
+    const res = await getEnquiryList();
 
     console.log("FULL RESPONSE:", res);
 

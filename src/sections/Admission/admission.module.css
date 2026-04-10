@@ -10,7 +10,11 @@
   gap: 4rem;
   align-items: start;
 }
-
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
 /* LEFT SIDE */
 .title {
   font-family: "Baloo 2", cursive;
