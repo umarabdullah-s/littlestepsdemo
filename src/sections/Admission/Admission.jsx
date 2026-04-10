@@ -1,8 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SectionTag from "@/layout/WebLayout";
 import colors from "@/layout/utils/color";
 import styles from "./admission.module.css";
+import { submitEnquiry } from "@/api/Serviceapi"
+import { getEnquiryList } from "@/api/Serviceapi";
 
 const Admission = () => {
   const [form, setForm] = useState({
@@ -14,7 +16,11 @@ const Admission = () => {
     program: "",
     year: "2025–2026",
   });
+  
 
+  const [errors, setErrors] = useState({});
+const [loading, setLoading] = useState(false);
+const [enquiries,setEnquiries]=useState([])
   const steps = [
     {
       title: "FILL THE ENQUIRY FORM",
@@ -30,68 +36,129 @@ const Admission = () => {
     },
     {
       title: "Confirm Admission ",
-      desc: "Complete the admission process and your child's spot is secured. Welcome to Alo Little Steps!", },
+      desc: "Complete the admission process and your child's spot is secured. Welcome to Alo Little Steps!",
+    },
   ];
- const [errors, setErrors] = useState({});
 
-  // 🔹 Handle Input Change
+  // ✅ Handle Change (single function)
   const handleChange = (e) => {
-  const { name, value } = e.target;
-  setForm({ ...form, [name]: value });
-};
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
 
-  // 🔹 Validation Function
+    // 🔥 remove error while typing
+    setErrors({ ...errors, [name]: "" });
+  };
+
+  // ✅ Validation
   const validateForm = () => {
-  const newErrors = {};
+    const newErrors = {};
 
-  if (!form.parent.trim()) {
-    newErrors.parent = "Parent name is required";
-  }
+    if (!form.parent.trim()) {
+      newErrors.parent = "Parent name is required";
+    }
 
-  if (!form.child.trim()) {
-    newErrors.child = "Child name is required";
-  }
+    if (!form.child.trim()) {
+      newErrors.child = "Child name is required";
+    }
 
-  if (!form.phone) {
-    newErrors.phone = "Phone number is required";
-  } else if (!/^\d{10}$/.test(form.phone)) {
-    newErrors.phone = "Phone must be 10 digits";
-  }
+    if (!form.phone) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(form.phone)) {
+      newErrors.phone = "Phone must be 10 digits";
+    }
 
-  if (!form.age.trim()) {
-    newErrors.age = "Child age is required";
-  }
+    if (!form.age.trim()) {
+      newErrors.age = "Child age is required";
+    }
 
-  if (!form.email) {
-    newErrors.email = "Email is required";
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-    newErrors.email = "Invalid email";
-  }
+    if (!form.email) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      newErrors.email = "Invalid email";
+    }
 
-  if (!form.program) {
-    newErrors.program = "Select a program";
-  }
+    if (!form.program) {
+      newErrors.program = "Select a program";
+    }
 
-  return newErrors;
+    return newErrors;
+  };
+const programMap = {
+  "Playgroup (1.5 – 2.5 Years)": "playgroup",
+  "Nursery (2.5 – 3.5 Years)": "nursery",
+  "LKG (3.5 – 4.5 Years)": "lkg",
+  "UKG (4.5 – 5.5 Years)": "ukg",
+  "After School Programs": "daycare",
 };
-
- const handleSubmit = (e) => {
+  // ✅ Submit
+const handleSubmit = async (e) => {
   e.preventDefault();
 
   const validationErrors = validateForm();
   setErrors(validationErrors);
 
-  if (Object.keys(validationErrors).length === 0) {
-    alert("Form Submitted Successfully ");
-    console.log(form);
+  if (Object.keys(validationErrors).length > 0) return;
+
+  try {
+    setLoading(true);
+
+   const payload = {
+  parentsName: form.parent,
+  childsName: form.child,
+  phoneNumber: "+91 " + form.phone,
+  email: form.email,
+  programOfInterest: programMap[form.program], // 🔥 FIX HERE
+};
+    console.log("Payload:", payload);
+
+    const res = await submitEnquiry(payload);
+
+    console.log("Success:", res);
+    alert("✅ Enquiry Submitted Successfully 🎉");
+
+    // ✅ Reset form
+    setForm({
+      parent: "",
+      child: "",
+      phone: "",
+      age: "",
+      email: "",
+      program: "",
+      year: "2025–2026",
+    });
+
+  } catch (error) {
+    console.error("Error:", error?.response?.data);
+    alert(error?.response?.data?.message || "❌ Submission failed");
+  } finally {
+    setLoading(false);
   }
 };
+useEffect(() => {
+  fetchEnquiries();
+}, []);
 
+const fetchEnquiries = async () => {
+  try {
+    const res = await getEnquiryList(1);
 
+    console.log("FULL RESPONSE:", res);
 
+    const data =
+      res?.data?.data || 
+      res?.data?.enquiries || 
+      res?.data || 
+      [];
+
+    setEnquiries(data);
+
+  } catch (error) {
+    console.error("GET ERROR:", error);
+  }
+};
   return (
     <section
-      id="admission"zz
+      id="admission"
       className={styles.section}
       style={{
         "--cream": colors.cream,
@@ -103,40 +170,25 @@ const Admission = () => {
       }}
     >
       <div className={styles.container}>
-      
-        <div data-aos="fade-up" data-aos-duration="1000">
-          {/* TAG */}
-          <div data-aos="fade-down" data-aos-delay="100">
+        
+        <div>
+          <div>
             <SectionTag>Admissions</SectionTag>
           </div>
 
-          <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-         START YOUR CHILD’S EARLY LEARNING
-
+          <h2 className={styles.title}>
+            START YOUR CHILD’S EARLY LEARNING
           </h2>
 
-     
-          <div
-            className={styles.underline}
-            data-aos="fade-down"
-            data-aos-delay="300"
-          ></div>
+          <div className={styles.underline}></div>
 
-     
-          <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
-          Enroll your child at Alo Little Steps through a simple four step process.
-
+          <p className={styles.desc}>
+            Enroll your child at Alo Little Steps through a simple four step process.
           </p>
 
-     
           <div className={styles.steps}>
             {steps.map((s, i) => (
-              <div
-                key={i}
-                className={styles.stepItem}
-                data-aos="fade-up"
-                data-aos-delay={500 + i * 150}
-              >
+              <div key={i} className={styles.stepItem}>
                 {i < steps.length - 1 && (
                   <div className={styles.stepLine}></div>
                 )}
@@ -152,79 +204,80 @@ const Admission = () => {
           </div>
         </div>
 
-     
-        <div className={styles.formBox} data-aos="fade-up" data-aos-delay="500">
-       
-          <h3
-            className={styles.formTitle}
-            data-aos="fade-down"
-            data-aos-delay="600"
-          >
-             Enquiry Form
-          </h3>
+        {/* ✅ FORM */}
+        <form className={styles.formBox} onSubmit={handleSubmit}>
+          
+          <h3 className={styles.formTitle}>Enquiry Form</h3>
 
-        
+          {/* Parent + Child */}
           <div className={styles.grid2}>
             {[
               ["Parent's Name", "text", "Full name", "parent"],
               ["Child's Name", "text", "Child's name", "child"],
             ].map(([label, type, ph, key], i) => (
-              <div key={key} data-aos="fade-up" data-aos-delay={700 + i * 100}>
+              <div key={key}>
                 <label className={styles.label}>{label}</label>
                 <input
                   type={type}
+                  name={key}
                   placeholder={ph}
                   value={form[key]}
-                  onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+                  onChange={handleChange}
                   className={styles.input}
                 />
+                {errors[key] && (
+                  <p className={styles.error}>{errors[key]}</p>
+                )}
               </div>
             ))}
           </div>
 
+          {/* Phone + Age */}
           <div className={styles.grid2}>
             {[
               ["Phone Number", "tel", "+91 XXXXX XXXXX", "phone"],
               ["Child's Age", "text", "e.g. 3 years", "age"],
             ].map(([label, type, ph, key], i) => (
-              <div key={key} data-aos="fade-up" data-aos-delay={800 + i * 100}>
+              <div key={key}>
                 <label className={styles.label}>{label}</label>
                 <input
                   type={type}
+                  name={key}
                   placeholder={ph}
                   value={form[key]}
-                  onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+                  onChange={handleChange}
                   className={styles.input}
                 />
+                {errors[key] && (
+                  <p className={styles.error}>{errors[key]}</p>
+                )}
               </div>
             ))}
           </div>
 
-          <div
-            className={styles.inputGroup}
-            data-aos="fade-up"
-            data-aos-delay="900"
-          >
+          {/* Email */}
+          <div className={styles.inputGroup}>
             <label className={styles.label}>Email Address</label>
             <input
               type="email"
+              name="email"
               placeholder="your@email.com"
               value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              onChange={handleChange}
               className={styles.input}
             />
+            {errors.email && (
+              <p className={styles.error}>{errors.email}</p>
+            )}
           </div>
 
-       
-          <div
-            className={styles.inputGroup}
-            data-aos="fade-up"
-            data-aos-delay="1000"
-          >
+          {/* Program */}
+          <div className={styles.inputGroup}>
             <label className={styles.label}>Program of Interest</label>
             <select
+              name="program"
               value={form.program}
-              onChange={(e) => setForm({ ...form, program: e.target.value })}
+              onChange={handleChange}
               className={styles.select}
             >
               <option value="">Select a program...</option>
@@ -238,16 +291,16 @@ const Admission = () => {
                 <option key={p}>{p}</option>
               ))}
             </select>
+            {errors.program && (
+              <p className={styles.error}>{errors.program}</p>
+            )}
           </div>
 
-         
-          <button
-  className={styles.button}
-  onClick={handleSubmit}
->
-  Submit Enquiry →
+          {/* Submit */}
+        <button type="submit" disabled={loading} className={styles.button}>
+  {loading ? "Submitting..." : "Submit Enquiry →"}
 </button>
-        </div>
+        </form>
       </div>
     </section>
   );
