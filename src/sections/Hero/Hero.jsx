@@ -193,7 +193,7 @@ const Hero = () => {
             left: -30,
           },
           {
-            text: "🏆 Award-Winning Curriculum",
+            text: "🏆Trusted by Parents - for award winning",
             color: colors.blue,
             bottom: -20,
             right: -20,
