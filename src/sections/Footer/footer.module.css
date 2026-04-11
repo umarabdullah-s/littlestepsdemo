@@ -1,187 +1,108 @@
 .footer {
   background: var(--dark);
-  color: rgba(255, 255, 255, 0.6);
-  /* padding: 40px 5%; */
-  padding:30px 20px;
+  color: rgba(255, 255, 255, 0.6); /* Muted text for that premium look */
+  padding: 40px 20px;
   text-align: center;
   font-family: "Nunito", sans-serif;
-  font-size: 0.88rem;
 }
 
-.logo {
-  font-family: "Baloo 2", cursive;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: rgb(50, 110, 160);
-  margin-bottom: 8px;
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center; /* Keep everything centered */
+  gap: 20px;
 }
-.blue {
-  color: #5DADE2;
-}
-.highlight{
-  color:#FF6B81;
-}
-.coral {
-  color: #FF6B81;
-}
-.mint {
-  color: #6ED384;
-}
-.highlight {
-  color: var(--mint);
-}
-.logo {
+
+/* ✅ Logo Styling */
+.logoContainer {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.brandName {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between words */
+  font-family: "Baloo 2", cursive; /* Recommended for play schools */
+  font-size: 1.8rem;
+  font-weight: 800;
 }
 
+/* ALO - Blue */
+.blueText {
+  color: #5DADE2; 
+}
 
+/* LITTLE - Orange */
+.orangeText {
+  color: #fa7f59; 
+}
+
+/* STEPS - Green */
+.greenText {
+  color: #6ED384; 
+}
+
+/* ✅ Navigation */
 .nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 16px 0;
+  margin: 10px 0;
 }
-.footerImg {
-  width: 140px;
-  height: 40px;
-  object-fit: cover;
-}
+
 .navBtn {
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: "Nunito", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 600;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   cursor: pointer;
   text-transform: capitalize;
   transition: color 0.2s;
 }
 
 .navBtn:hover {
-  color: var(--sun);
+  color: #fff;
 }
 
+/* ✅ Contact Bar (Horizontal like the image) */
 .contact {
-  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
+.divider {
+  opacity: 0.3;
+  color: #fff;
+}
+
+/* ✅ Copyright */
 .copy {
-  margin-top: 12px;
-  font-size: 0.78rem;
+  margin-top: 10px;
+  font-size: 0.8rem;
   opacity: 0.4;
 }
-@media (max-width: 576px) {
-  .footer {
-    padding: 30px 4%;
-    font-size: 0.8rem;
-  }
 
-  .logo {
-    font-size: 1.3rem;
-  }
-
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
   .nav {
-    flex-direction: column;   /* stack items */
-    gap: 10px;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
-
-  .navBtn {
-    font-size: 0.85rem;
-  }
-
   .contact {
-    font-size: 0.75rem;
-    line-height: 1.6;
+    flex-direction: column;
+    gap: 8px;
   }
-
-  .copy {
-    font-size: 0.7rem;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  .footer {
-    padding: 35px 5%;
-    font-size: 0.85rem;
-  }
-
-  .logo {
-    font-size: 1.45rem;
-  }
-
-  .nav {
-    flex-wrap: wrap;        /* allow wrapping */
-    gap: 1.2rem;
-  }
-
-  .navBtn {
-    font-size: 0.83rem;
-  }
-
-  .contact {
-    font-size: 0.8rem;
-    line-height: 1.6;
-  }
-
-  .copy {
-    font-size: 0.75rem;
-  }
-}
-@media (min-width: 769px) and (max-width: 992px) {
-  .footer {
-    padding: 38px 5%;
-    font-size: 0.87rem;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .nav {
-    flex-wrap: wrap;         /* still allow wrapping */
-    gap: 1.5rem;
-  }
-
-  .navBtn {
-    font-size: 0.84rem;
-  }
-
-  .contact {
-    font-size: 0.82rem;
-    line-height: 1.6;
-  }
-
-  .copy {
-    font-size: 0.76rem;
-  }
-}
-@media (min-width: 993px) and (max-width: 1200px) {
-  .footer {
-    padding: 40px 6%;
-    font-size: 0.9rem;
-  }
-
-  .logo {
-    font-size: 1.55rem;
-  }
-
-  .nav {
-    gap: 1.8rem; /* slightly tighter than full desktop */
-  }
-
-  .navBtn {
-    font-size: 0.85rem;
-  }
-
-  .contact {
-    font-size: 0.85rem;
-    line-height: 1.6;
-  }
-
-  .copy {
-    font-size: 0.78rem;
+  .divider {
+    display: none;
   }
 }

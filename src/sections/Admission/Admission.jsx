@@ -29,8 +29,8 @@ const [enquiries,setEnquiries]=useState([])
       desc: "Visit our campus, meet our teachers, and let your child experience the environment.",
     },
     {
-      title: "Submit Documents photos, and other documents.",
-      desc: "Submit birth certificate, ",
+      title: "Submit Documents ",
+      desc: "Share the required documents including birth certificate, photos, and other documents. ",
     },
     {
       title: "Confirm Admission ",

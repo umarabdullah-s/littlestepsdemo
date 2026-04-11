@@ -1,64 +1,73 @@
 "use client";
 import React from "react";
-import colors from "@/layout/utils/color";
 import styles from "./footer.module.css";
 import Image from "next/image";
+
 const Footer = () => {
   return (
     <footer
       className={styles.footer}
       style={{
-        "--dark": colors.dark,
-        "--mint": colors.mint,
-        "--sun": colors.sun,
+        "--dark": "#2D2A4A",
+        "--mint": "#6ED384",
+        "--sun": "#FFB800",
       }}
     >
-     <div
-  className={styles.logo}
-  data-aos="fade-down"
-  data-aos-delay="100"
-  data-aos-duration="1000"
->
-<Image
-  src="/steps.png"
-  alt="Alo Little Steps"
-  width={140}
-  height={0}
-  className={styles.footerImg}
-/>
-</div>
+      {/* ✅ Common Container */}
+      <div className={styles.inner}>
 
-      <div
-        className={styles.nav}
-        data-aos="fade-down"
-        data-aos-delay="100"
-        data-aos-duration="1000"
-      >
-        {["about", "programs", "campus", "montessori", "admission"].map(
-          (id) => (
+        {/* ✅ Logo */}
+        <div className={styles.logoContainer}>
+          <Image
+            src="/fav.png"
+            alt="logo"
+            width={40}
+            height={40}
+            className={styles.logoImg}
+          />
+<span className={styles.brandName}>
+        <span className={styles.blueText}>ALO</span>
+        <span className={styles.orangeText}>LITTLE</span>
+        <span className={styles.greenText}>STEPS</span>
+      </span>
+        </div>
+
+        {/* ✅ Navigation */}
+        <nav className={styles.nav}>
+          {["about", "programs", "campus", "montessori", "admissions"].map((id) => (
             <button
               key={id}
               className={styles.navBtn}
               onClick={() =>
-                document
-                  .getElementById(id)
-                  ?.scrollIntoView({ behavior: "smooth" })
+                document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              {id}
+              {id.charAt(0).toUpperCase() + id.slice(1)}
             </button>
-          ),
-        )}
+          ))}
+        </nav>
+
+        {/* ✅ Contact */}
+        <div className={styles.contact}>
+          <span className={styles.contactItem}>
+            📍 Kesari street, 13/B1, Kesari St, opposite Eden Hall, Nagercoil, Tamil Nadu 629001
+          </span>
+
+          <span className={styles.contactItem}>
+            📞 +91 84386 99145
+          </span>
+
+          <span className={styles.contactItem}>
+            ✉️ alolittlesteps@gmail.com
+          </span>
+        </div>
+
+        {/* ✅ Copyright */}
+        <p className={styles.copy}>
+          © {new Date().getFullYear()} Blossom Play School. All rights reserved.
+        </p>
+
       </div>
-
-      <p className={styles.contact}>
-        📍kesari street, 13/B1, Kesari St, opposite Eden Hall, Nagercoil, Tamil Nadu &nbsp;|&nbsp; Phone: +91 84386 99145
-        &nbsp;|&nbsp; ✉️ hello@alolittlestepsplayschool.in
-      </p>
-
-      <p className={styles.copy}>
-        © 2026 Alo Little Steps. All rights reserved.
-      </p>
     </footer>
   );
 };

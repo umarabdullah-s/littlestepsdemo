@@ -74,10 +74,10 @@ const About = () => {
         {/* LIST */}
         <ul className={styles.list}>
           {[
-            ["💛", "Child-centered learning philosophy"],
-            ["🛡️", "Safe, secure, and hygienic campus"],
-            ["🤝", "Strong parent-teacher partnership"],
-            ["🌱", "Holistic development — mind, body & spirit"],
+            ["💛", "Dedicated and caring teachers"],
+            ["🛡️", "Bright and engaging learning spaces"],
+            ["🤝", " Safe and secure environment"],
+            ["🌱", "Smart curriculum for overall growth"],
           ].map(([icon, text], i) => (
             <li
               key={text}

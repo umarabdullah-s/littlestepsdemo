@@ -1,19 +1,19 @@
-"use client";
+
 import React from "react";
 import styles from "./campus.module.css";
 
 const Campus = () => {
   const features = [
     { icon: "🏊", label: "Smart ClassRoom" },
-{ icon: "🎪", label: "playpark" },
-    { icon: "📚", label: "Mini Library" },
-    { icon: "🎨", label: "Art Studio" },
-    { icon: "🎵", label: "Music Room" },
+{ icon: "🎪", label: "Play Park" },
+    { icon: "📚", label: " Library" },
+    { icon: "🎨", label: "ArtRoom" },
+    { icon: "🎵", label: "Dance Room" },
     { icon: "🌱", label: "DiningArea" },
   ];
 
   return (
-    <section className={styles.section}>
+<section id="campus" className={styles.section}>
       <div className={styles.container}>
         
         {/* LEFT SIDE */}

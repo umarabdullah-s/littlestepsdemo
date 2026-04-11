@@ -79,7 +79,7 @@ const Hero = () => {
           }}
         >
           <FontAwesomeIcon icon={faGraduationCap} />
-          Admissions Open 2025–26
+          Admissions Open 2026–27
         </div>
 
       

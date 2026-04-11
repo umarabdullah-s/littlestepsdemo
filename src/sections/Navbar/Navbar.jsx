@@ -8,19 +8,52 @@ import img from "@/assets/images/logo1.png";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("about");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  useEffect(() => {
+  const handleScroll = () => {
+    const sections = ["about", "programs", "campus", "montessori", "admission"];
 
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false);
+    let current = "about";
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        const sectionTop = element.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = id;
+        }
+      }
+    });
+
+    setActive(current);
   };
 
-  const menuItems = ["About", "Programs", "Campus", "Montessori", "Admission"];
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+const scrollTo = (id) => {
+  const element = document.getElementById(id);
+  console.log("ID:", id, "ELEMENT:", element); 
+  if (element) {
+    const offset = 80; // adjust based on navbar height
+    const top = element.offsetTop - offset;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+  }
+
+  setOpen(false);
+};
+
+  const menuItems = ["about", "programs", "campus", "montessori", "admission"];
 
   return (
     <nav
@@ -37,15 +70,18 @@ const Navbar = () => {
         </div>
 
         {/* DESKTOP MENU */}
-        <ul className={styles.menu}>
-          {menuItems.map((id) => (
-            <li key={id}>
-              <button onClick={() => scrollTo(id)}>
-                {id}
-              </button>
-            </li>
-          ))}
-        </ul>
+     <ul className={styles.menu}>
+  {menuItems.map((id) => (
+    <li key={id}>
+      <button
+        onClick={() => scrollTo(id)}
+        className={active === id ? styles.active : ""}
+      >
+        {id.charAt(0).toUpperCase() + id.slice(1)}
+      </button>
+    </li>
+  ))}
+</ul>
 
         {/* BUTTON */}
         <button
@@ -71,9 +107,9 @@ const Navbar = () => {
           <ul>
             {menuItems.map((id) => (
               <li key={id}>
-                <p onClick={() => scrollTo(id)} className={styles.menuItem}>
-                  {id}
-                </p>
+              <p onClick={() => scrollTo(id)} className={styles.menuItem}>
+  {id.charAt(0).toUpperCase() + id.slice(1)}
+</p>
               </li>
             ))}
           </ul>

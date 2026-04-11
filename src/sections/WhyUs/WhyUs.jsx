@@ -66,7 +66,7 @@ const WhyUs = () => {
 
         {/* SUBTITLE */}
         <p className={styles.subtitle} data-aos="fade-up" data-aos-delay="300">
-          Every choice we make is guided by what's best for your child.
+        Our learning method is designed to bring out your child’s best potential
         </p>
       </div>
 

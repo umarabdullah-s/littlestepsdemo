@@ -35,10 +35,12 @@
 .desc {
   color: var(--mid);
   line-height: 1.7;
+
 }
 
 .steps {
   margin-top: 2rem;
+
 }
 
 .stepItem {
@@ -84,7 +86,7 @@
 }
 
 .stepDesc {
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   color: var(--mid);
   margin-top: 4px;
   line-height: 1.5;

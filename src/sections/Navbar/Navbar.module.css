@@ -10,6 +10,17 @@
   font-family: "Nunito", sans-serif;
 }
 
+
+
+.menu button.active {
+  color: #ff6b6b !important;
+  font-weight: 700;
+}
+
+.active {
+  color: #ff6b6b; /* your coral color */
+  font-weight: 600;
+}
 .scrolled {
   background: rgba(255, 249, 240, 0.96);
   box-shadow: 0 2px 20px rgba(45, 42, 74, 0.1);
