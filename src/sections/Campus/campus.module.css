@@ -1,292 +1,160 @@
 .section {
-  background: white;
-  padding: 80px 5%;
-  font-family: "Nunito", sans-serif;
+  padding: 100px 40px;
+  background: #f8f8fc;
 }
 
 .container {
+  max-width: 1250px;
+  margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
   align-items: center;
 }
 
-/* LEFT */
+/* LEFT SIDE */
+.tag {
+  background: #ede9fe;
+  color: #7c6cff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
 .title {
-  font-family: "Baloo 2", cursive;
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-size: 42px;
   font-weight: 800;
-  color: var(--dark);
-  margin: 0;
+  line-height: 1.2;
+  color: #2f2f4f;
+  margin-bottom: 10px;
 }
 
 .underline {
-  width: 60px;
+  width: 45px;
   height: 4px;
-  background: var(--sky);
-  border-radius: 2px;
-  margin: 1rem 0;
+  background: #36d399;
+  border-radius: 10px;
+  margin: 15px 0;
 }
 
 .desc {
-  color: var(--mid);
-  line-height: 1.7;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 25px;
 }
 
-.features {
+/* FEATURE LIST */
+.featureList {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 1.5rem;
+  gap: 14px;
 }
 
 .featureItem {
-  background: var(--cream);
-  border-radius: 16px;
-  padding: 16px;
+  background: #f8e8f0;
+  padding: 16px 18px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   gap: 12px;
-  font-weight: 600;
-  font-size: 0.88rem;
+  font-weight: 500;
+  color: #3f3f46;
 }
 
-.featureIcon {
-  font-size: 1.4rem;
+.icon {
+  font-size: 16px;
 }
 
-/* RIGHT */
-.tiles {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 200px 200px;
-  gap: 16px;
-}
-
-.tile {
-  border-radius: 20px;
+/* RIGHT SIDE */
+.right {
   display: flex;
-  align-items: center;
+  gap: 10px;
+
+}
+
+/* BIG CARD */
+.bigCard {
+  flex: 1;
+  height: 420px;
+   
+  width:300px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #ff6a6a, #ff8a5c);
+  display: flex;
   justify-content: center;
-  font-size: 3rem;
+  align-items: center;
   position: relative;
 }
 
-.tileLabel {
+.bigEmoji {
+  font-size: 20px;
+}
+
+.cardLabel {
   position: absolute;
-  bottom: 12px;
-  left: 12px;
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  border-radius: 8px;
+  bottom: 18px;
+  left: 18px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 12px;
+}
+
+/* SMALL GRID */
+.smallGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+}
+
+/* SMALL CARDS */
+.smallGrid div {
+  width: 150px;
+  height: 200px;
+  border-radius: 22px;
+
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+gap:10px;
+  font-weight: 600;
+
+
+}
+
+/* GRADIENT COLORS MATCH IMAGE */
+.cardGreen {
+  background: linear-gradient(135deg, #56c596, #3ecf8e);
+}
+
+.cardOrange {
+  background: linear-gradient(135deg, #f6b73c, #f78f4b);
+}
+
+.cardPurple {
+  background: linear-gradient(135deg, #8e7dff, #5ec6ff);
+}
+
+.cardBlue {
+  background: linear-gradient(135deg, #4facfe, #6dd5ed);
+}
+
+.smallGrid span {
+  font-size: 20px;
+}
+
+.smallGrid p {
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.25);
   padding: 4px 10px;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-@media (max-width: 576px) {
-  .section {
-    padding: 50px 4%;
-  }
-
-  .container {
-    grid-template-columns: 1fr;   /* stack layout */
-    gap: 2rem;
-  }
-
-  /* LEFT */
-  .title {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .underline {
-    margin: 0.8rem auto;
-  }
-
-  .desc {
-    text-align: center;
-    font-size: 0.85rem;
-  }
-
-  .features {
-    grid-template-columns: 1fr;   /* stack features */
-    gap: 10px;
-  }
-
-  .featureItem {
-    padding: 14px;
-    font-size: 0.82rem;
-  }
-
-  .featureIcon {
-    font-size: 1.2rem;
-  }
-
-  /* RIGHT */
-  .tiles {
-    grid-template-columns: 1fr 1fr;   /* simple grid */
-    grid-template-rows: auto;
-    gap: 10px;
-  }
-
-  .tile {
-    font-size: 2rem;
-    min-height: 120px;
-  }
-
-  .tileLabel {
-    font-size: 0.7rem;
-    padding: 3px 8px;
-  }
-}
-@media (min-width: 577px) and (max-width: 768px) {
-  .section {
-    padding: 60px 5%;
-  }
-
-  .container {
-    grid-template-columns: 1fr;   /* stack layout */
-    gap: 2.5rem;
-  }
-
-  /* LEFT */
-  .title {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .underline {
-    margin: 1rem auto;
-  }
-
-  .desc {
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  .features {
-    grid-template-columns: 1fr 1fr; /* keep 2 columns */
-    gap: 10px;
-  }
-
-  .featureItem {
-    padding: 14px;
-    font-size: 0.85rem;
-  }
-
-  .featureIcon {
-    font-size: 1.3rem;
-  }
-
-  /* RIGHT */
-  .tiles {
-    grid-template-columns: 1fr 1fr; /* balanced grid */
-    grid-template-rows: auto;
-    gap: 12px;
-  }
-
-  .tile {
-    font-size: 2.5rem;
-    min-height: 150px;
-  }
-
-  .tileLabel {
-    font-size: 0.72rem;
-  }
-}
-@media (min-width: 769px) and (max-width: 992px) {
-  .section {
-    padding: 70px 5%;
-  }
-
-  .container {
-    grid-template-columns: 1fr; /* back to 2 columns */
-    gap: 2.5rem;
-  }
-
-  /* LEFT */
-  .title {
-    font-size: 2.2rem;
-  }
-
-  .desc {
-    font-size: 0.95rem;
-  }
-
-  .features {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .featureItem {
-    padding: 14px;
-    font-size: 0.86rem;
-  }
-
-  .featureIcon {
-    font-size: 1.3rem;
-  }
-
-  /* RIGHT */
-  .tiles {
-    grid-template-columns: 1.5fr 1fr 1fr; /* slightly compact */
-    grid-template-rows: 180px 180px;
-    gap: 12px;
-  }
-
-  .tile {
-    font-size: 2.6rem;
-  }
-
-  .tileLabel {
-    font-size: 0.72rem;
-  }
-}
-@media (min-width: 993px) and (max-width: 1200px) {
-  .section {
-    padding: 75px 6%;
-  }
-
-  .container {
-    grid-template-columns: 1fr; 
-    gap: 3rem;
-  }
-
-  /* LEFT */
-  .title {
-    font-size: 2.4rem;
-  }
-
-  .desc {
-    font-size: 1rem;
-  }
-
-  .features {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .featureItem {
-    padding: 16px;
-    font-size: 0.88rem;
-  }
-
-  .featureIcon {
-    font-size: 1.4rem;
-  }
-
-  /* RIGHT */
-  .tiles {
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 190px 190px;
-    gap: 14px;
-  }
-
-  .tile {
-    font-size: 2.8rem;
-  }
-
-  .tileLabel {
-    font-size: 0.75rem;
-  }
+  border-radius: 10px;
 }
