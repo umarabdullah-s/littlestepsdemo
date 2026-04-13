@@ -4,10 +4,7 @@
   font-family: "Nunito", sans-serif;
 }
 
-/* HEADER */
-.header {
-  text-align: center;
-}
+
 
 .title {
   font-family: "Baloo 2", cursive;
@@ -16,19 +13,28 @@
   color: var(--dark);
   margin: 0;
 }
-
+.tag {
+  background: #ede9fe;
+  color: #7c6cff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+}
 .underline {
   width: 60px;
   height: 4px;
   background: var(--mint);
   border-radius: 2px;
-  margin: 1rem auto;
+  margin: 1rem 0;
 }
 
 .desc {
   color: var(--mid);
   max-width: 520px;
-  margin: 0 auto;
+  margin: 0 ;
 }
 
 /* CARDS */

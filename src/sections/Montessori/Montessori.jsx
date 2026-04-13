@@ -49,7 +49,7 @@ const Montessori = () => {
         <div data-aos="fade-up" data-aos-duration="1000">
           {/* TAG */}
           <div data-aos="fade-down" data-aos-delay="100">
-            <SectionTag>Montessori Method</SectionTag>
+            <span className={styles.tag}>Montessori Method</span>
           </div>
 
           {/* TITLE */}
@@ -103,8 +103,8 @@ const Montessori = () => {
             <div className={styles.quoteSymbol}>"</div>
 
             <p className={styles.quoteText}>
-              ”A child’s needs are simple, and a happy childhood needs only simple surroundings”
-
+              ”A child’s needs are simple, and a happy childhood needs only
+              simple surroundings”
             </p>
 
             <div className={styles.quoteAuthor}>— Dr. Maria Montessori</div>

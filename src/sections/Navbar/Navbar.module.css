@@ -212,4 +212,9 @@
   .logo {
     width: 20%;
   }
+  .menu {
+  display: flex;
+  gap: 1.3rem;
+  list-style: none;
+}
 }

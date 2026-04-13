@@ -41,7 +41,16 @@
   line-height: 1.2;
   margin: 0;
 }
-
+.tag {
+  background: #ede9fe;
+  color: #7c6cff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+}
 .underline {
   width: 60px;
   height: 4px;
@@ -54,7 +63,6 @@
   color: var(--mid);
   font-size: 1rem;
   line-height: 1.7;
-  max-width: 520px;
 }
 
 /* LIST */

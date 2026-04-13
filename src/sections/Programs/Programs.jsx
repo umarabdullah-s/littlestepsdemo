@@ -63,7 +63,7 @@ const Programs = () => {
       <div className={styles.header}>
         {/* TAG */}
         <div data-aos="fade-down" data-aos-delay="100">
-          <SectionTag>Our Programs</SectionTag>
+          <span className={styles.tag}>PROGRAMS</span>
         </div>
 
         {/* TITLE */}
@@ -80,7 +80,7 @@ const Programs = () => {
 
         {/* DESCRIPTION */}
         <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
-         Supporting your child’s journey through every stage of early learning.
+          Supporting your child’s journey through every stage of early learning.
         </p>
       </div>
 
