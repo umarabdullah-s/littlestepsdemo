@@ -14,9 +14,10 @@ const WebLayout = ({children}) => {
           fontSize: "0.8rem",
           letterSpacing: "0.08em",
           textTransform: "uppercase",
-          // padding: "6px 14px",
+         
           borderRadius: 50,
           fontFamily: "'Nunito', sans-serif",
+          // marginBottom: "1rem",
         }}
       >
         {children}

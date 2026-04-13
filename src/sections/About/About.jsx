@@ -50,12 +50,12 @@ const About = () => {
       <div data-aos="fade-up" data-aos-delay="200">
         {/* TAG */}
         <div data-aos="fade-down" data-aos-delay="100">
-          <SectionTag>About Us</SectionTag>
+          <span className={styles.tag}>ABOUT US</span>
         </div>
 
         {/* TITLE */}
         <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-         Nurturing young minds in a safe, loving environment
+          Nurturing young minds in a safe, loving environment
         </h2>
 
         {/* UNDERLINE */}
@@ -67,8 +67,10 @@ const About = () => {
 
         {/* DESCRIPTION */}
         <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
-          At Hello Little Steps, we believe that early education should be meaningful and joyful. Here, children grow in a safe, caring environment that supports self confidence, curiosity, and overall development.
-
+          At Hello Little Steps, we believe that early education should be
+          meaningful and joyful. Here, children grow in a safe, caring
+          environment that supports self confidence, curiosity, and overall
+          development.
         </p>
 
         {/* LIST */}

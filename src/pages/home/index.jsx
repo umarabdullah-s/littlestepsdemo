@@ -17,15 +17,15 @@ const Home = () => {
         <title>ALO Little Steps</title>
         {/* enter seo here */}
       </Head>
-      <Navbar/>
-      <Hero/>
-      <About/>
-      <WhyUs/>
-      <Programs/>
-      <Campus/>
-      <Montessori/>
-      <Admission/>
-      <Footer/>
+      <Navbar />
+      <Hero />
+      <About />
+      <WhyUs />
+      <Programs />
+      <Campus />
+      <Montessori />
+      <Admission />
+      <Footer />
     </Fragment>
   );
 };
