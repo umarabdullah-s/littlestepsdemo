@@ -7,9 +7,9 @@ const Campus = () => {
     { icon: "🏊", label: "Smart ClassRoom" },
 { icon: "🎪", label: "Play Park" },
     { icon: "📚", label: " Library" },
-    { icon: "🎨", label: "ArtRoom" },
+    { icon: "🎨", label: "Art Room" },
     { icon: "🎵", label: "Dance Room" },
-    { icon: "🌱", label: "DiningArea" },
+    { icon: "🌱", label: "Dining Area" },
   ];
 
   return (

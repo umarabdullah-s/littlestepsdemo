@@ -18,18 +18,16 @@ const Footer = () => {
 
         {/* ✅ Logo */}
         <div className={styles.logoContainer}>
-          <Image
-            src="/fav.png"
-            alt="logo"
-            width={40}
-            height={40}
-            className={styles.logoImg}
-          />
-<span className={styles.brandName}>
-        <span className={styles.blueText}>ALO</span>
-        <span className={styles.orangeText}>LITTLE</span>
-        <span className={styles.greenText}>STEPS</span>
-      </span>
+        <div className={styles.logoContainer}>
+  <Image
+    src="/steps.png"
+    alt="ALO Little Steps"
+    width={220}   // 👈 control size here
+    height={60}
+    className={styles.logoImg}
+  />
+</div>
+
         </div>
 
         {/* ✅ Navigation */}
@@ -83,7 +81,7 @@ const Footer = () => {
 </div>
         {/* ✅ Copyright */}
         <p className={styles.copy}>
-          © {new Date().getFullYear()} Blossom Play School. All rights reserved.
+          © {new Date().getFullYear()} Alo Little Steps. All rights reserved.
         </p>
 
       </div>

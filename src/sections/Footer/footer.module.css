@@ -18,18 +18,17 @@
 /* ✅ Logo Styling */
 .logoContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 12px;
-}
-.brandName {
-  display: flex;
   align-items: center;
-  gap: 8px; /* Space between words */
-  font-family: "Baloo 2", cursive; /* Recommended for play schools */
-  font-size: 1.8rem;
-  font-weight: 800;
 }
+
+.logoImg {
+  width: 220px;     /* 👈 adjust like image */
+
+  object-fit: cover;
+
+}
+
 
 /* ALO - Blue */
 .blueText {
@@ -85,6 +84,8 @@
   color: inherit;
   margin-bottom: 8px;
   cursor: pointer;
+
+  text-transform: none; /* ✅ FIX EMAIL UPPERCASE ISSUE */
 }
 
 .contactItem:hover {
