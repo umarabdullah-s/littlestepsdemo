@@ -20,7 +20,7 @@ const Footer = () => {
         <div className={styles.logoContainer}>
         <div className={styles.logoContainer}>
   <Image
-    src="/steps.png"
+    src="/logo.png"
     alt="ALO Little Steps"
     width={220}   // 👈 control size here
     height={60}
@@ -30,7 +30,7 @@ const Footer = () => {
 
         </div>
 
-        {/* ✅ Navigation */}
+      
         <nav className={styles.nav}>
           {["about", "programs", "campus", "montessori", "admission"].map((id) => (
             <button
@@ -45,7 +45,7 @@ const Footer = () => {
           ))}
         </nav>
 
-        {/* ✅ Contact */}
+
       <div className={styles.contact}>
   
   {/* 📍 Google Maps */}
@@ -79,9 +79,9 @@ const Footer = () => {
   </a>
 
 </div>
-        {/* ✅ Copyright */}
+       
         <p className={styles.copy}>
-          © {new Date().getFullYear()} Alo Little Steps. All rights reserved.
+          © {new Date().getFullYear()} ALO Little Steps. All rights reserved.
         </p>
 
       </div>
