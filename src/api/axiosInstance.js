@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://backend.aloinfotech.in/api",
+  baseURL: "https://alosodt.com/api",
   headers: {
     "Content-Type": "application/json",
   },
