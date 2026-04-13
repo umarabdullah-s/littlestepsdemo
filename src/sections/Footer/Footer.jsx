@@ -34,7 +34,7 @@ const Footer = () => {
 
         {/* ✅ Navigation */}
         <nav className={styles.nav}>
-          {["about", "programs", "campus", "montessori", "admissions"].map((id) => (
+          {["about", "programs", "campus", "montessori", "admission"].map((id) => (
             <button
               key={id}
               className={styles.navBtn}
