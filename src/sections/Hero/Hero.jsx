@@ -127,29 +127,28 @@ const Hero = () => {
         </div>
 
         {/* Stats */}
-       <div className={styles.stats}>
-  {[
-    { num: "100%", label: "Parent Satisfaction" },
-    { num: "10+", label: "Learning Programs" },
-    { num: "50+", label: "Creative Activities" },
-  ].map((item) => (
-    <div key={item.label} className={styles.statBox}>
-      <div
-        className={styles.statNumber}
-        style={{ color: colors.dark }}
-      >
-        {item.num || "0"} {/* ✅ SAFE FALLBACK */}
-      </div>
-
-      <div
-        className={styles.statLabel}
-        style={{ color: colors.mid }}
-      >
-        {item.label}
-      </div>
-    </div>
-  ))}
-</div>
+        <div className={styles.stats}>
+          {[
+            ["100%", "PARENT SATISFACTION"],
+            ["10+", "LEARNING PROGRAMS"],
+            ["50+", "CREATIVE ACTIVITIES"],
+          ].map(([num, label]) => (
+            <div key={label} className={styles.statBox}>
+              <div
+                className={styles.statNumber}
+                style={{ color: colors.dark }}
+              >
+                {num}
+              </div>
+              <div
+                className={styles.statLabel}
+                style={{ color: colors.mid }}
+              >
+                {label}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       
