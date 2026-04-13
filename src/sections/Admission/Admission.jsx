@@ -158,20 +158,18 @@ const handleSubmit = async (e) => {
       }}
     >
       <div className={styles.container}>
-        
         <div>
           <div>
-            <SectionTag>Admissions</SectionTag>
+            <span className={styles.tag}>ADMISSION</span>
           </div>
 
-          <h2 className={styles.title}>
-            START YOUR CHILD’S EARLY LEARNING
-          </h2>
+          <h2 className={styles.title}>START YOUR CHILD’S EARLY LEARNING</h2>
 
           <div className={styles.underline}></div>
 
           <p className={styles.desc}>
-            Enroll your child at Alo Little Steps through a simple four step process.
+            Enroll your child at Alo Little Steps through a simple four step
+            process.
           </p>
 
           <div className={styles.steps}>
@@ -194,91 +192,91 @@ const handleSubmit = async (e) => {
 
         {/* ✅ FORM */}
         <form className={styles.formBox} onSubmit={handleSubmit}>
-  <h3 className={styles.formTitle}>Enquiry Form</h3>
+          <h3 className={styles.formTitle}>Enquiry Form</h3>
 
-  {/* Parent + Child */}
-  <div className={styles.grid2}>
-    {[
-      ["Parent's Name", "text", "Full name", "parentsName"],
-      ["Child's Name", "text", "Child's name", "childsName"],
-    ].map(([label, type, ph, key]) => (
-      <div key={key}>
-        <label className={styles.label}>{label}</label>
-        <input
-          type={type}
-          name={key}
-          placeholder={ph}
-          value={form[key]}
-          onChange={handleChange}
-          className={styles.input}
-        />
-        {errors[key] && <p className={styles.error}>{errors[key]}</p>}
-      </div>
-    ))}
-  </div>
+          {/* Parent + Child */}
+          <div className={styles.grid2}>
+            {[
+              ["Parent's Name", "text", "Full name", "parentsName"],
+              ["Child's Name", "text", "Child's name", "childsName"],
+            ].map(([label, type, ph, key]) => (
+              <div key={key}>
+                <label className={styles.label}>{label}</label>
+                <input
+                  type={type}
+                  name={key}
+                  placeholder={ph}
+                  value={form[key]}
+                  onChange={handleChange}
+                  className={styles.input}
+                />
+                {errors[key] && <p className={styles.error}>{errors[key]}</p>}
+              </div>
+            ))}
+          </div>
 
-  {/* Phone + Age */}
-  <div className={styles.grid2}>
-    {[
-      ["Phone Number", "tel", "+91 XXXXX XXXXX", "phoneNumber"],
-      ["Child's Age", "number", "e.g. 3", "age"],
-    ].map(([label, type, ph, key]) => (
-      <div key={key}>
-        <label className={styles.label}>{label}</label>
-        <input
-          type={type}
-          name={key}
-          placeholder={ph}
-          value={form[key]}
-          onChange={handleChange}
-          className={styles.input}
-        />
-        {errors[key] && <p className={styles.error}>{errors[key]}</p>}
-      </div>
-    ))}
-  </div>
+          {/* Phone + Age */}
+          <div className={styles.grid2}>
+            {[
+              ["Phone Number", "tel", "+91 XXXXX XXXXX", "phoneNumber"],
+              ["Child's Age", "number", "e.g. 3", "age"],
+            ].map(([label, type, ph, key]) => (
+              <div key={key}>
+                <label className={styles.label}>{label}</label>
+                <input
+                  type={type}
+                  name={key}
+                  placeholder={ph}
+                  value={form[key]}
+                  onChange={handleChange}
+                  className={styles.input}
+                />
+                {errors[key] && <p className={styles.error}>{errors[key]}</p>}
+              </div>
+            ))}
+          </div>
 
-  {/* Email */}
-  <div className={styles.inputGroup}>
-    <label className={styles.label}>Email Address</label>
-    <input
-      type="email"
-      name="email"
-      placeholder="your@email.com"
-      value={form.email}
-      onChange={handleChange}
-      className={styles.input}
-    />
-    {errors.email && <p className={styles.error}>{errors.email}</p>}
-  </div>
+          {/* Email */}
+          <div className={styles.inputGroup}>
+            <label className={styles.label}>Email Address</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              value={form.email}
+              onChange={handleChange}
+              className={styles.input}
+            />
+            {errors.email && <p className={styles.error}>{errors.email}</p>}
+          </div>
 
-  {/* Program */}
-  <div className={styles.inputGroup}>
-    <label className={styles.label}>Program of Interest</label>
-   <select
-  name="programOfInterest"
-  value={form.programOfInterest}
-  onChange={handleChange}
-  className={styles.select}
->
-  <option value="">Select a program...</option>
+          {/* Program */}
+          <div className={styles.inputGroup}>
+            <label className={styles.label}>Program of Interest</label>
+            <select
+              name="programOfInterest"
+              value={form.programOfInterest}
+              onChange={handleChange}
+              className={styles.select}
+            >
+              <option value="">Select a program...</option>
 
-  <option value="playgroup">Playgroup (1.5 – 2.5 Years)</option>
-  <option value="nursery">Nursery (2.5 – 3.5 Years)</option>
-  <option value="lkg">LKG (3.5 – 4.5 Years)</option>
-  <option value="ukg">UKG (4.5 – 5.5 Years)</option>
-  <option value="daycare">After School Programs</option>
-</select>
-    {errors.programOfInterest && (
-      <p className={styles.error}>{errors.programOfInterest}</p>
-    )}
-  </div>
+              <option value="playgroup">Playgroup (1.5 – 2.5 Years)</option>
+              <option value="nursery">Nursery (2.5 – 3.5 Years)</option>
+              <option value="lkg">LKG (3.5 – 4.5 Years)</option>
+              <option value="ukg">UKG (4.5 – 5.5 Years)</option>
+              <option value="daycare">After School Programs</option>
+            </select>
+            {errors.programOfInterest && (
+              <p className={styles.error}>{errors.programOfInterest}</p>
+            )}
+          </div>
 
-  {/* Submit */}
-  <button type="submit" disabled={loading} className={styles.button}>
-    {loading ? "Submitting..." : "Submit Enquiry →"}
-  </button>
-</form>
+          {/* Submit */}
+          <button type="submit" disabled={loading} className={styles.button}>
+            {loading ? "Submitting..." : "Submit Enquiry →"}
+          </button>
+        </form>
       </div>
     </section>
   );

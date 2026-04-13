@@ -83,7 +83,7 @@ const Footer = () => {
 </div>
         {/* ✅ Copyright */}
         <p className={styles.copy}>
-          © {new Date().getFullYear()} Blossom Play School. All rights reserved.
+          © {new Date().getFullYear()} ALO Little Steps. All rights reserved.
         </p>
 
       </div>

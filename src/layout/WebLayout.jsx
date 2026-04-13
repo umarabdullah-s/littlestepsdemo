@@ -13,7 +13,7 @@ const WebLayout = ({children}) => {
           fontWeight: 700,
           fontSize: "0.8rem",
           letterSpacing: "0.08em",
-          textTransform: "uppercase",
+          // textTransform: "uppercase",
          
           borderRadius: 50,
           fontFamily: "'Nunito', sans-serif",

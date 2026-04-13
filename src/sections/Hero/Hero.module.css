@@ -87,7 +87,7 @@
 
 .secondaryBtn {
   background: white;
-  padding: 14px 30px;
+  padding: 14px 35px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 1rem;
@@ -277,47 +277,76 @@
 /* ================= TABLET (577px – 768px) ================= */
 /* ================= TABLET (577px – 768px) ================= */
 @media (min-width: 577px) and (max-width: 768px) {
-
   .hero {
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
     text-align: center;
-    padding: 80px 20px;
-    gap: 35px;
+    padding: 100px 40px 60px;
   }
 
+  /* LEFT CONTENT */
   .content {
-    max-width: 100%;
+    width: 100%;
   }
 
   .heading {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
+    line-height: 1.2;
   }
 
   .description {
-    font-size: 0.95rem;
-    max-width: 90%;
-    margin: auto;
+    font-size: 1rem;
   }
 
+  /* BUTTONS */
   .buttonGroup {
     justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid red;
   }
 
+  /* STATS */
   .stats {
     justify-content: center;
+    gap: 1.8rem;
     flex-wrap: wrap;
-    gap: 1.2rem;
   }
 
+  .statNumber {
+    font-size: 1.7rem;
+  }
+
+  /* RIGHT CARD (👇 move below) */
   .cardWrapper {
-    width: 100%;
-    max-width: 380px;
+    position: static;   /* 🔥 important */
+    transform: none;
+    width: 70%;
+    margin-top: 50px;
+  }
+
+  .card {
+    padding: 24px;
   }
 
   .grid {
-    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
   }
+
+  .gridItem {
+    font-size: 1.5rem;
+  }
+
+  /* FLOATING BADGES */
+  .floatingBadge {
+    display: none; /* cleaner look */
+  }
+
+  /* BG SHAPES */
+  .shape {
+    opacity: 0.4;
+  }
+
+
 }
 /* ================= SMALL LAPTOP (769px – 992px) ================= */
 @media (min-width: 769px) and (max-width: 992px) {

@@ -242,11 +242,6 @@ gap:10px;
     max-width: 100%;
   }
 
-  .tag {
-    display: block;
-    text-align: center;
-    margin: 0 auto 10px;
-  }
 
   .underline {
     margin: 12px auto;
