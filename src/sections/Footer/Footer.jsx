@@ -81,7 +81,7 @@ const Footer = () => {
 </div>
         {/* ✅ Copyright */}
         <p className={styles.copy}>
-          © {new Date().getFullYear()} Alo Little Steps. All rights reserved.
+          © {new Date().getFullYear()} ALO Little Steps. All rights reserved.
         </p>
 
       </div>
