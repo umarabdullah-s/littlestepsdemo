@@ -129,9 +129,9 @@ const Hero = () => {
         {/* Stats */}
         <div className={styles.stats}>
           {[
-            ["500+", "Happy Children"],
-            ["15+", "Years of Excellence"],
-            ["40+", "Expert Educators"],
+            ["100%", "PARENT SATISFACTION"],
+            ["10+", "LEARNING PROGRAMS"],
+            ["50+", "CREATIVE ACTIVITIES"],
           ].map(([num, label]) => (
             <div key={label} className={styles.statBox}>
               <div
@@ -193,7 +193,7 @@ const Hero = () => {
             left: -30,
           },
           {
-            text: "🏆Trusted by Parents - for award winning",
+            text: "🏆Trusted by Parents",
             color: colors.blue,
             bottom: -20,
             right: -20,
