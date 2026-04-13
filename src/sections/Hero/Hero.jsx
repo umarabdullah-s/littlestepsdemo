@@ -127,28 +127,29 @@ const Hero = () => {
         </div>
 
         {/* Stats */}
-        <div className={styles.stats}>
-          {[
-            ["500+", "Happy Children"],
-            ["15+", "Years of Excellence"],
-            ["40+", "Expert Educators"],
-          ].map(([num, label]) => (
-            <div key={label} className={styles.statBox}>
-              <div
-                className={styles.statNumber}
-                style={{ color: colors.dark }}
-              >
-                {num}
-              </div>
-              <div
-                className={styles.statLabel}
-                style={{ color: colors.mid }}
-              >
-                {label}
-              </div>
-            </div>
-          ))}
-        </div>
+       <div className={styles.stats}>
+  {[
+    { num: "100%", label: "Parent Satisfaction" },
+    { num: "10+", label: "Learning Programs" },
+    { num: "50+", label: "Creative Activities" },
+  ].map((item) => (
+    <div key={item.label} className={styles.statBox}>
+      <div
+        className={styles.statNumber}
+        style={{ color: colors.dark }}
+      >
+        {item.num || "0"} {/* ✅ SAFE FALLBACK */}
+      </div>
+
+      <div
+        className={styles.statLabel}
+        style={{ color: colors.mid }}
+      >
+        {item.label}
+      </div>
+    </div>
+  ))}
+</div>
       </div>
 
       
@@ -193,7 +194,7 @@ const Hero = () => {
             left: -30,
           },
           {
-            text: "🏆Trusted by Parents - for award winning",
+            text: "🏆Trusted by Parents",
             color: colors.blue,
             bottom: -20,
             right: -20,

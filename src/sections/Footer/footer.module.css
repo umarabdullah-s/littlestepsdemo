@@ -79,6 +79,17 @@
   font-size: 0.88rem;
   color: rgba(255, 255, 255, 0.8);
 }
+.contactItem {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.contactItem:hover {
+  color: var(--mint);
+}
 
 .divider {
   opacity: 0.3;

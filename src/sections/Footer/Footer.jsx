@@ -48,20 +48,39 @@ const Footer = () => {
         </nav>
 
         {/* ✅ Contact */}
-        <div className={styles.contact}>
-          <span className={styles.contactItem}>
-            📍 Kesari street, 13/B1, Kesari St, opposite Eden Hall, Nagercoil, Tamil Nadu 629001
-          </span>
+      <div className={styles.contact}>
+  
+  {/* 📍 Google Maps */}
+  <a
+    href="https://www.google.com/maps?q=Kesari+street,+13/B1,+Kesari+St,+Nagercoil,+Tamil+Nadu+629001"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.contactItem}
+  >
+    📍 Kesari street, 13/B1, Kesari St, opposite Eden Hall, Nagercoil, Tamil Nadu 629001
+  </a>
 
-          <span className={styles.contactItem}>
-            📞 +91 84386 99145
-          </span>
+  {/* 📞 Phone → WhatsApp (Browser Friendly) */}
+  <a
+    href="https://wa.me/918438699145"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.contactItem}
+  >
+    📞 +91 84386 99145
+  </a>
 
-          <span className={styles.contactItem}>
-            ✉️ alolittlesteps@gmail.com
-          </span>
-        </div>
+  {/* ✉️ Email → Gmail Web */}
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=alolittlesteps@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.contactItem}
+  >
+    ✉️ alolittlesteps@gmail.com
+  </a>
 
+</div>
         {/* ✅ Copyright */}
         <p className={styles.copy}>
           © {new Date().getFullYear()} Blossom Play School. All rights reserved.
