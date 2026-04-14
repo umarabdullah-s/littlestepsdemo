@@ -91,9 +91,8 @@ const Hero = () => {
 
         {/* Description */}
         <p className={styles.description} style={{ color: colors.mid }}>
-          A nurturing Montessori-inspired play school where every child
-          discovers the joy of learning through play, creativity, and
-          exploration.
+        The premium playschool encourages children to explore, learn, and grow in a safe, caring, and engaging environment.
+
         </p>
 
   

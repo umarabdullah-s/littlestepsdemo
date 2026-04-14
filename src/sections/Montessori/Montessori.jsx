@@ -27,8 +27,8 @@ const Montessori = () => {
   ];
 
   const stats = [
-    ["98%", "School Readiness Rate"],
-    ["4.9★", "Parent Rating"],
+    ["98%", "Secure Enviroinment"],
+    ["4.9★", "Smart Learning"],
     ["100%", "Certified Montessori Staff"],
     ["1:8", "Teacher-to-Child Ratio"],
   ];

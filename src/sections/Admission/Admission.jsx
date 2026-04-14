@@ -18,6 +18,7 @@ const Admission = () => {
 
   const [errors, setErrors] = useState({});
 const [loading, setLoading] = useState(false);
+const programs = ["daycare", "playgroup", "nursery", "lkg", "ukg"];
 const [enquiries,setEnquiries]=useState([])
   const steps = [
     {
@@ -81,13 +82,13 @@ const [enquiries,setEnquiries]=useState([])
 
   return newErrors;
 };
-const programMap = {
-  "Playgroup (1.5 – 2.5 Years)": "playgroup",
-  "Nursery (2.5 – 3.5 Years)": "nursery",
-  "LKG (3.5 – 4.5 Years)": "lkg",
-  "UKG (4.5 – 5.5 Years)": "ukg",
-  "After School Programs": "daycare",
-};
+// const programMap = {
+//   "Playgroup (1.5 – 2.5 Years)": "playgroup",
+//   "Nursery (2.5 – 3.5 Years)": "nursery",
+//   "LKG (3.5 – 4.5 Years)": "lkg",
+//   "UKG (4.5 – 5.5 Years)": "ukg",
+//   "After School Programs": "daycare",
+// };
   // ✅ Submit
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -253,23 +254,24 @@ const handleSubmit = async (e) => {
           {/* Program */}
           <div className={styles.inputGroup}>
             <label className={styles.label}>Program of Interest</label>
-            <select
-              name="programOfInterest"
-              value={form.programOfInterest}
-              onChange={handleChange}
-              className={styles.select}
-            >
-              <option value="">Select a program...</option>
+        <select
+  name="programOfInterest"
+  value={form.programOfInterest}
+  onChange={handleChange}
+  className={styles.select}
+>
+  <option value="">Select a program...</option>
 
-              <option value="playgroup">Playgroup (1.5 – 2.5 Years)</option>
-              <option value="nursery">Nursery (2.5 – 3.5 Years)</option>
-              <option value="lkg">LKG (3.5 – 4.5 Years)</option>
-              <option value="ukg">UKG (4.5 – 5.5 Years)</option>
-              <option value="daycare">After School Programs</option>
-            </select>
-            {errors.programOfInterest && (
-              <p className={styles.error}>{errors.programOfInterest}</p>
-            )}
+  {programs.map((item) => (
+    <option key={item} value={item}>
+      {item.charAt(0).toUpperCase() + item.slice(1)}
+    </option>
+  ))}
+</select>
+
+{errors.programOfInterest && (
+  <p className={styles.error}>{errors.programOfInterest}</p>
+)}
           </div>
 
           {/* Submit */}
