@@ -26,3 +26,6 @@ body {
     transform: translateY(-20px) rotate(5deg);
   }
 }
+section {
+  scroll-margin-top: 70px;
+}

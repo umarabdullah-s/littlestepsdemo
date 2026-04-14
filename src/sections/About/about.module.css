@@ -91,11 +91,14 @@
     gap: 2rem;
     padding: 50px 4%;
   }
-
+ .section > div:nth-child(2) {
+    order: 1;
+  }
   /* LEFT CARDS */
   .cardGrid {
     grid-template-columns: 1fr;
     gap: 12px;
+      order: 2;
   }
 
   .card {
@@ -146,11 +149,14 @@
     gap: 3rem;
     padding: 60px 5%;
   }
-
+ .section > div:nth-child(2) {
+    order: 1;
+  }
   /* LEFT CARDS */
   .cardGrid {
     grid-template-columns: 1fr 1fr; /* keep 2 columns */
     gap: 14px;
+     order: 2;
   }
 
   .card {

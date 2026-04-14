@@ -112,6 +112,10 @@
   pointer-events: auto;
   animation: dropIn 0.3s ease;
 }
+.menuItem.active {
+  color: #ff6b6b;
+  font-weight: 700;
+}
 @keyframes dropIn {
   0% { transform: translate(-50%, -30px); opacity: 0; }
   100% { transform: translate(-50%, 0); opacity: 1; }

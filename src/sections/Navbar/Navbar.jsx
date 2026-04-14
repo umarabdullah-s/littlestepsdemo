@@ -39,13 +39,8 @@ const Navbar = () => {
 }, []);
 const scrollTo = (id) => {
   const element = document.getElementById(id);
-  console.log("ID:", id, "ELEMENT:", element); 
   if (element) {
-    const offset = 80; // adjust based on navbar height
-    const top = element.offsetTop - offset;
-
-    window.scrollTo({
-      top,
+    element.scrollIntoView({
       behavior: "smooth",
     });
   }
@@ -66,26 +61,26 @@ const scrollTo = (id) => {
       <div className={styles.container}>
         {/* LOGO */}
         <div
-  className={styles.logo}
-  style={{ color: colors.coral }}
-  onClick={() => scrollTo("hero")}
->
-  <img src={img.src} alt="img" />
-</div>
+          className={styles.logo}
+          style={{ color: colors.coral }}
+          onClick={() => scrollTo("hero")}
+        >
+          <img src={img.src} alt="img" />
+        </div>
 
         {/* DESKTOP MENU */}
-     <ul className={styles.menu}>
-  {menuItems.map((id) => (
-    <li key={id}>
-      <button
-        onClick={() => scrollTo(id)}
-        className={active === id ? styles.active : ""}
-      >
-        {id.charAt(0).toUpperCase() + id.slice(1)}
-      </button>
-    </li>
-  ))}
-</ul>
+        <ul className={styles.menu}>
+          {menuItems.map((id) => (
+            <li key={id}>
+              <button
+                onClick={() => scrollTo(id)}
+                className={active === id ? styles.active : ""}
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </button>
+            </li>
+          ))}
+        </ul>
 
         {/* BUTTON */}
         <button
@@ -111,9 +106,12 @@ const scrollTo = (id) => {
           <ul>
             {menuItems.map((id) => (
               <li key={id}>
-              <p onClick={() => scrollTo(id)} className={styles.menuItem}>
-  {id.charAt(0).toUpperCase() + id.slice(1)}
-</p>
+                <p
+                  onClick={() => scrollTo(id)}
+                  className={`${styles.menuItem} ${active === id ? styles.active : ""}`}
+                >
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                </p>
               </li>
             ))}
           </ul>
