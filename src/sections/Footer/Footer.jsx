@@ -25,7 +25,7 @@ const Footer = () => {
         "--sun": "#FFB800",
       }}
     >
-      {/* ✅ Common Container */}
+   
       <div className={styles.inner}>
         {/* ✅ Logo */}
         <div className={styles.logoContainer}>
