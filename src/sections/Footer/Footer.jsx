@@ -35,7 +35,7 @@ const Footer = () => {
             style={{ cursor: "pointer" }}
           >
             <Image
-              src="/logo.png"
+              src="/ALO Little Steps-013x.png"
               alt="ALO Little Steps"
               width={220}
               height={60}

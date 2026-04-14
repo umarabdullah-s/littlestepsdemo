@@ -64,13 +64,13 @@ const Montessori = () => {
             data-aos-delay="300"
           ></div>
 
-          {/* DESCRIPTION */}
+        
           <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
             The Montessori philosophy guides everything we do — giving children
             the freedom to explore and the time to grow at their own pace.
           </p>
 
-          {/* PILLARS */}
+       
           <div className={styles.pillars}>
             {pillars.map((p, i) => (
               <div
@@ -92,9 +92,8 @@ const Montessori = () => {
           </div>
         </div>
 
-        {/* RIGHT */}
         <div data-aos="fade-up" data-aos-delay="500">
-          {/* QUOTE */}
+       
           <div
             className={styles.quoteBox}
             data-aos="fade-down"
@@ -110,7 +109,7 @@ const Montessori = () => {
             <div className={styles.quoteAuthor}>— Dr. Maria Montessori</div>
           </div>
 
-          {/* STATS */}
+   
           <div className={styles.stats}>
             {stats.map(([num, label], i) => (
               <div
