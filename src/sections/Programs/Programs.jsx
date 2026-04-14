@@ -68,7 +68,7 @@ const Programs = () => {
 
         {/* TITLE */}
         <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-          Tailored for Every Age Group
+       TAILORED FOR EVERY AGE GROUP
         </h2>
 
         {/* UNDERLINE */}

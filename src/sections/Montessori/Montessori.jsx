@@ -54,7 +54,7 @@ const Montessori = () => {
 
           {/* TITLE */}
           <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-            Education That Follows the Child
+           EDUCATION THAT FOLLOWS THE CHILD
           </h2>
 
           {/* UNDERLINE */}

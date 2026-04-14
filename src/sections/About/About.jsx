@@ -55,7 +55,7 @@ const About = () => {
 
         {/* TITLE */}
         <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
-          Nurturing young minds in a safe, loving environment
+          NURTURING YOUNG MINDS IN A SAFE, LOVING ENVIROINMENT
         </h2>
 
         {/* UNDERLINE */}

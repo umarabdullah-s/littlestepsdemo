@@ -21,7 +21,7 @@ const Campus = () => {
           <span className={styles.tag}>OUR CAMPUS</span>
 
           <h2 className={styles.title}>
-         Spaces for Every Little Step of Learning
+        SPACES FOR EVERY LITTLE STEPS OF LEARNING
 
           </h2>
 
