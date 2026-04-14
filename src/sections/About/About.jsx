@@ -8,7 +8,7 @@ const About = () => {
   const cards = [
     { icon: "👩‍🏫", label: "Caring Teachers", bg: "#FFF0F0", mt: 0 },
     { icon: "🌈", label: "Colorful Learning", bg: "#F0FFF4", mt: 24 },
-    { icon: "🏡", label: "Safe Environment", bg: "#FFF8E0", mt: -24 },
+    { icon: "🏡", label: "Safe Environment", bg: "#FFF8E0", mt: 0 },
     { icon: "💡", label: "Smart Curriculum", bg: "#E8F8FF", mt: 0 },
   ];
 
