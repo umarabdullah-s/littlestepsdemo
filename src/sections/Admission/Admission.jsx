@@ -11,14 +11,20 @@ const Admission = () => {
   parentsName: "",
   childsName: "",
   phoneNumber: "",
-  age: "",
+
   email: "",
   programOfInterest: "",
 });
 
   const [errors, setErrors] = useState({});
 const [loading, setLoading] = useState(false);
-const programs = ["daycare", "playgroup", "nursery", "lkg", "ukg"];
+const programs = [
+  "Day Care (6 months to 2 years)",
+  "Playgroup (2 - 3 years)",
+  "Nursery (3 - 4 years)",
+  "LKG (4 - 5 years)",
+  "UKG (5 - 6 years)"
+];
 const [enquiries,setEnquiries]=useState([])
   const steps = [
     {
@@ -66,9 +72,7 @@ const [enquiries,setEnquiries]=useState([])
     newErrors.phoneNumber = "Phone must be 10 digits";
   }
 
-  if (!form.age) {
-    newErrors.age = "Child age is required";
-  }
+ 
 
   if (!form.email) {
     newErrors.email = "Email is required";
@@ -105,7 +109,7 @@ const handleSubmit = async (e) => {
       parentsName: form.parentsName,
       childsName: form.childsName,
       phoneNumber: form.phoneNumber,
-      age: Number(form.age),
+     
       email: form.email,
       programOfInterest: form.programOfInterest,
     };
@@ -123,7 +127,7 @@ const handleSubmit = async (e) => {
       parentsName: "",
       childsName: "",
       phoneNumber: "",
-      age: "",
+
       email: "",
       programOfInterest: "",
     });
@@ -217,25 +221,21 @@ const handleSubmit = async (e) => {
           </div>
 
           {/* Phone + Age */}
-          <div className={styles.grid2}>
-            {[
-              ["Phone Number", "tel", "+91 XXXXX XXXXX", "phoneNumber"],
-              ["Child's Age", "number", "e.g. 3", "age"],
-            ].map(([label, type, ph, key]) => (
-              <div key={key}>
-                <label className={styles.label}>{label}</label>
-                <input
-                  type={type}
-                  name={key}
-                  placeholder={ph}
-                  value={form[key]}
-                  onChange={handleChange}
-                  className={styles.input}
-                />
-                {errors[key] && <p className={styles.error}>{errors[key]}</p>}
-              </div>
-            ))}
-          </div>
+         {/* Phone (Full Width) */}
+<div className={styles.inputGroup}>
+  <label className={styles.label}>Phone Number</label>
+  <input
+    type="tel"
+    name="phoneNumber"
+    placeholder="+91 XXXXX XXXXX"
+    value={form.phoneNumber}
+    onChange={handleChange}
+    className={styles.input}
+  />
+  {errors.phoneNumber && (
+    <p className={styles.error}>{errors.phoneNumber}</p>
+  )}
+</div>
 
           {/* Email */}
           <div className={styles.inputGroup}>
