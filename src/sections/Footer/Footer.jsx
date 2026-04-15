@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./footer.module.css";
-import Image from "next/image";
+import img from "@/assets/images/footerimg.png"
 
 const Footer = () => {
   const scrollToSection = (id) => {
@@ -28,21 +28,15 @@ const Footer = () => {
    
       <div className={styles.inner}>
        
-        <div className={styles.logoContainer}>
+        
           <div
             className={styles.logoContainer}
             onClick={() => scrollToSection("hero")}
             style={{ cursor: "pointer" }}
           >
-            <Image
-              src="/ALO Little Steps-013x.png"
-              alt="ALO Little Steps"
-              width={220}
-              height={60}
-              className={styles.logoImg}
-            />
+           <img src={img.src} alt="img"/>
           </div>
-        </div>
+        
 
         <nav className={styles.nav}>
           {["about", "programs", "campus", "montessori", "admission"].map(
