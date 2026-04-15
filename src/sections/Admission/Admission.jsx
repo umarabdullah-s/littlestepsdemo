@@ -32,15 +32,15 @@ const [enquiries,setEnquiries]=useState([])
       desc: "Share your child’s basic details and preferred program with us online or during your visit.",
     },
     {
-      title: "School Tour & Interaction",
+      title: "SCHOOL TOUR & INTEGRATION",
       desc: "Visit our campus, meet our teachers, and let your child experience the environment.",
     },
     {
-      title: "Submit Documents ",
+      title: "SUBMIT DOCUMENTS ",
       desc: "Share the required documents including birth certificate, photos, and other documents. ",
     },
     {
-      title: "Confirm Admission ",
+      title: "CONFIRM ADMISSION ",
       desc: "Complete the admission process and your child's spot is secured. Welcome to Alo Little Steps!",
     },
   ];
