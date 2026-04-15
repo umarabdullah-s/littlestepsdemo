@@ -7,7 +7,7 @@ const Footer = () => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 50; // 👈 your required margin top
+      const offset = 50;
       const top = element.offsetTop - offset;
 
       window.scrollTo({
@@ -27,7 +27,7 @@ const Footer = () => {
     >
    
       <div className={styles.inner}>
-        {/* ✅ Logo */}
+       
         <div className={styles.logoContainer}>
           <div
             className={styles.logoContainer}
@@ -59,7 +59,7 @@ const Footer = () => {
         </nav>
 
         <div className={styles.contact}>
-          {/* 📍 Google Maps */}
+          
           <a
             href="https://www.google.com/maps?q=Kesari+street,+13/B1,+Kesari+St,+Nagercoil,+Tamil+Nadu+629001"
             target="_blank"
@@ -70,7 +70,7 @@ const Footer = () => {
             Tamil Nadu 629001
           </a>
 
-          {/* 📞 Phone → WhatsApp (Browser Friendly) */}
+        
           <a
             href="https://wa.me/918438699145"
             target="_blank"
@@ -80,7 +80,6 @@ const Footer = () => {
             📞 +91 84386 99145
           </a>
 
-          {/* ✉️ Email → Gmail Web */}
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=alolittlesteps@gmail.com"
             target="_blank"

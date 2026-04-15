@@ -1,7 +1,6 @@
 .footer {
   background: var(--dark);
-  color: rgba(255, 255, 255, 0.6); /* Muted text for that premium look */
-  padding: 40px 20px;
+  color: rgba(255, 255, 255, 0.6); 
   text-align: center;
   font-family: "Nunito", sans-serif;
 }
@@ -11,11 +10,11 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Keep everything centered */
+  align-items: center; 
   gap: 20px;
 }
 
-/* ✅ Logo Styling */
+
 .logoContainer {
   display: flex;
   justify-content: center;
@@ -23,7 +22,7 @@
 }
 
 .logoImg {
-  width: 220px;     /* 👈 adjust like image */
+  width: 220px;   
 
   object-fit: cover;
 
