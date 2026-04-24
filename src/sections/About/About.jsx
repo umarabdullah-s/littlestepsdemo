@@ -23,7 +23,7 @@ const About = () => {
         "--coral": colors.coral,
       }}
     >
-      {/* LEFT CARDS */}
+
       <div
         className={styles.cardGrid}
         data-aos="fade-up"
