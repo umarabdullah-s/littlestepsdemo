@@ -68,7 +68,11 @@
   font-size: 1.8rem;
   margin-bottom: 16px;
 }
-
+.iconImage{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .cardTitle {
   color: white;
   font-family: "Baloo 2", cursive;

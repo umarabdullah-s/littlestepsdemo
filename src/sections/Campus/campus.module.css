@@ -95,7 +95,7 @@
 }
 
 .bigEmoji {
-  font-size: 36px;
+  font-size: 60px;
 }
 
 .cardLabel {
@@ -152,7 +152,7 @@ gap:10px;
 }
 
 .smallGrid span {
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .smallGrid p {
