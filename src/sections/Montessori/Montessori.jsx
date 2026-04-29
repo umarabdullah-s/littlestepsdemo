@@ -45,19 +45,19 @@ const Montessori = () => {
       }}
     >
       <div className={styles.container}>
-        {/* LEFT */}
+       
         <div data-aos="fade-up" data-aos-duration="1000">
-          {/* TAG */}
+         
           <div data-aos="fade-down" data-aos-delay="100">
             <span className={styles.tag}>Montessori Method</span>
           </div>
 
-          {/* TITLE */}
+   
           <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
            EDUCATION THAT FOLLOWS THE CHILD
           </h2>
 
-          {/* UNDERLINE */}
+  
           <div
             className={styles.underline}
             data-aos="fade-down"

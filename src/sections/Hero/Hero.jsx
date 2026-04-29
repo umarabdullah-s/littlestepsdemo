@@ -16,7 +16,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className={styles.hero}>
-      {/* BG Shapes */}
+  
       {[
         {
           w: 300,
@@ -89,7 +89,7 @@ const Hero = () => {
           <span style={{ color: colors.mint }}>Steps</span>
         </h1>
 
-        {/* Description */}
+    
         <p className={styles.description} style={{ color: colors.mid }}>
         The premium playschool encourages children to explore, learn, and grow in a safe, caring, and engaging environment.
 
@@ -125,7 +125,6 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* Stats */}
        
       </div>
 

@@ -42,7 +42,7 @@ const Campus = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
+   
         <div className={styles.right}>
          <div className={styles.bigCard}>
   <span className={styles.bigEmoji}>🎪</span>

@@ -59,7 +59,7 @@ const scrollTo = (id) => {
       }`}
     >
       <div className={styles.container}>
-        {/* LOGO */}
+    
         <div
           className={styles.logo}
           style={{ color: colors.coral }}
@@ -68,7 +68,6 @@ const scrollTo = (id) => {
           <img src={img.src} alt="img" />
         </div>
 
-        {/* DESKTOP MENU */}
         <ul className={styles.menu}>
           {menuItems.map((id) => (
             <li key={id}>
@@ -82,7 +81,6 @@ const scrollTo = (id) => {
           ))}
         </ul>
 
-        {/* BUTTON */}
         <button
           className={styles.enrollBtn}
           style={{ background: colors.coral, color: "white" }}

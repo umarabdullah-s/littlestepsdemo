@@ -59,32 +59,31 @@ const Programs = () => {
         "--mint": colors.mint,
       }}
     >
-      {/* HEADER */}
+    
       <div className={styles.header}>
-        {/* TAG */}
+       
         <div data-aos="fade-down" data-aos-delay="100">
           <span className={styles.tag}>PROGRAMS</span>
         </div>
 
-        {/* TITLE */}
+     
         <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
        TAILORED FOR EVERY AGE GROUP
         </h2>
 
-        {/* UNDERLINE */}
+   
         <div
           className={styles.underline}
           data-aos="fade-down"
           data-aos-delay="300"
         ></div>
 
-        {/* DESCRIPTION */}
+     
         <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
           Supporting your child’s journey through every stage of early learning.
         </p>
       </div>
 
-      {/* CARDS */}
       <div className={styles.grid} data-aos="fade-up" data-aos-delay="500">
         {programs.map((p, i) => (
           <div

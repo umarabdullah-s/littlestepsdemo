@@ -52,25 +52,24 @@ const WhyUs = () => {
         "--sun": colors.sun,
       }}
     >
-      {/* HEADER */}
+    
       <div className={styles.header}>
         {/* TAG */}
         <div className={styles.tag} data-aos="fade-down" data-aos-delay="100">
           Why Choose Us
         </div>
 
-        {/* TITLE */}
         <h2 className={styles.title} data-aos="fade-up" data-aos-delay="200">
           What Makes Us Special
         </h2>
 
-        {/* SUBTITLE */}
+    
         <p className={styles.subtitle} data-aos="fade-up" data-aos-delay="300">
         Our learning method is designed to bring out your child’s best potential
         </p>
       </div>
 
-      {/* CARDS */}
+     
       <div className={styles.grid} data-aos="fade-up" data-aos-delay="400">
         {cards.map((c, i) => (
           <div

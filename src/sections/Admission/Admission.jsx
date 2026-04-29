@@ -135,9 +135,9 @@ const handleSubmit = async (e) => {
     setErrors({});
 
   } catch (error) {
-    console.log("❌ FULL ERROR:", error);
-    console.log("❌ RESPONSE:", error?.response?.data);
-    console.log("❌ STATUS:", error?.response?.status);
+    console.log(" FULL ERROR:", error);
+    console.log(" RESPONSE:", error?.response?.data);
+    console.log(" STATUS:", error?.response?.status);
 
     const msg =
       error?.response?.data?.message ||
@@ -195,11 +195,11 @@ const handleSubmit = async (e) => {
           </div>
         </div>
 
-        {/* ✅ FORM */}
+   
         <form className={styles.formBox} onSubmit={handleSubmit}>
           <h3 className={styles.formTitle}>Enquiry Form</h3>
 
-          {/* Parent + Child */}
+    
           <div className={styles.grid2}>
             {[
               ["Parent's Name", "text", "Full name", "parentsName"],
@@ -220,8 +220,6 @@ const handleSubmit = async (e) => {
             ))}
           </div>
 
-          {/* Phone + Age */}
-         {/* Phone (Full Width) */}
 <div className={styles.inputGroup}>
   <label className={styles.label}>Phone Number</label>
   <input
@@ -237,7 +235,7 @@ const handleSubmit = async (e) => {
   )}
 </div>
 
-          {/* Email */}
+
           <div className={styles.inputGroup}>
             <label className={styles.label}>Email Address</label>
             <input
@@ -251,7 +249,7 @@ const handleSubmit = async (e) => {
             {errors.email && <p className={styles.error}>{errors.email}</p>}
           </div>
 
-          {/* Program */}
+   
           <div className={styles.inputGroup}>
             <label className={styles.label}>Program of Interest</label>
         <select
@@ -274,7 +272,7 @@ const handleSubmit = async (e) => {
 )}
           </div>
 
-          {/* Submit */}
+ 
           <button type="submit" disabled={loading} className={styles.button}>
             {loading ? "Submitting..." : "Submit Enquiry →"}
           </button>
