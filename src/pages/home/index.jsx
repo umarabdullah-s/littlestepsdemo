@@ -14,7 +14,9 @@ const Home = () => {
   return (
     <Fragment>
       <Head>
-        <title>ALO Little Steps</title>
+        <title>
+          Alo Little Steps | Best Montessori Play School in Nagercoil
+        </title>
         {/* enter seo here */}
       </Head>
       <Navbar />
