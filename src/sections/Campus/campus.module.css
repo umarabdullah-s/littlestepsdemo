@@ -25,7 +25,6 @@
 }
 
 .title {
-  /* font-size: 42px; */
   font-weight: 800;
   line-height: 1.2;
     font-family: "Baloo 2", cursive;
@@ -109,7 +108,7 @@
   border-radius: 12px;
 }
 
-/* SMALL GRID */
+
 .smallGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -117,7 +116,7 @@
 
 }
 
-/* SMALL CARDS */
+
 .smallGrid div {
   width: 150px;
   height: 200px;

@@ -161,8 +161,6 @@ const Hero = () => {
             Art · Music · Nature · Discovery
           </div>
         </div>
-
-       
         {[
           {
             text: "🌟 Top Rated School",
