@@ -67,7 +67,7 @@ const About = () => {
 
         {/* DESCRIPTION */}
         <p className={styles.desc} data-aos="fade-up" data-aos-delay="400">
-          At Hello Little Steps, we believe that early education should be
+          At Alo Little Steps, we believe that early education should be
           meaningful and joyful. Here, children grow in a safe, caring
           environment that supports self confidence, curiosity, and overall
           development.
